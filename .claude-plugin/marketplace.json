@@ -1,0 +1,13 @@
+{
+  "name": "switch",
+  "owner": {
+    "name": "stormovermars"
+  },
+  "plugins": [
+    {
+      "name": "switch",
+      "source": "./",
+      "description": "Apply twelve tone principles and flag manipulation techniques when writing or reviewing contentious texts (comments, replies, articles, posts, letters, speeches). It checks claims against both sides' sources, builds a term map, and on request rewrites for the other camp. Command: /switch."
+    }
+  ]
+}
