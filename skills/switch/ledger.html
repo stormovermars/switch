@@ -1,20 +1,23 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="claude:viewport-fit-sides" content="cover">
 <title>Claim ledger</title>
 <style>
-/* Layout: summary counts on top, filters, then the claim table; open items list below. */
+/* Layout: summary counts, filters, the claim table, the unapproved flag, open items, then the add form. */
 :root {
   --bg: #fafaf7; --fg: #1d1d1b; --muted: #66665f; --line: #dcdcd5; --surface: #ffffff;
-  --accent: #2f5d7c; --ok: #2d6a3e; --warn: #8a5a00; --bad: #9b2c2c;
+  --accent: #2f5d7c; --warn: #8a5a00;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #161715; --fg: #ecebe6; --muted: #9a9a92; --line: #3a3b37; --surface: #1f201d;
-    --accent: #8fbcd6; --ok: #8fd19e; --warn: #e6b65c; --bad: #f08a8a; color-scheme: dark;
+    --accent: #8fbcd6; --warn: #e6b65c; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #161715; --fg: #ecebe6; --muted: #9a9a92; --line: #3a3b37; --surface: #1f201d;
-  --accent: #8fbcd6; --ok: #8fd19e; --warn: #e6b65c; --bad: #f08a8a; color-scheme: dark;
+  --accent: #8fbcd6; --warn: #e6b65c; color-scheme: dark;
 }
 body { background: var(--bg); color: var(--fg); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
 main { padding-block: 20px 40px; padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); max-width: 980px; margin: 0 auto; }
@@ -28,19 +31,20 @@ h2 { font-size: 16px; margin: 28px 0 8px; }
 .filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
 button, select, input { font: inherit; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; }
 button { cursor: pointer; }
+button:disabled, input:disabled { opacity: .6; cursor: default; }
 button.on { border-color: var(--accent); color: var(--accent); }
 button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
-table { border-collapse: collapse; width: 100%; min-width: 620px; }
+table { border-collapse: collapse; width: 100%; min-width: 680px; }
 th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
 th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 600; }
 td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
-.status { font-size: 12px; border-radius: 999px; padding: 2px 8px; border: 1px solid currentColor; white-space: nowrap; }
-.s-true { color: var(--ok); } .s-partly_true { color: var(--warn); } .s-false { color: var(--bad); }
-.s-opinion, .s-open, .s-unverified { color: var(--muted); }
 .empty { padding: 24px; color: var(--muted); text-align: center; }
+.banner { border: 1px solid var(--warn); color: var(--warn); border-radius: 6px; padding: 8px 10px; margin-bottom: 12px; }
+.approve { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; color: var(--muted); }
+.approve input { width: auto; }
 .add { display: grid; gap: 8px; grid-template-columns: 1fr; margin-top: 12px; }
-@media (min-width: 640px) { .add { grid-template-columns: 2fr 1fr 1fr 1fr auto; } }
+@media (min-width: 640px) { .add { grid-template-columns: 2fr 1fr 1fr 1fr 1fr auto; } }
 .add input, .add select { min-width: 0; width: 100%; }
 .add button { background: var(--accent); color: var(--bg); border-color: var(--accent); }
 .msg { color: var(--muted); font-size: 13px; min-height: 1.4em; }
@@ -52,7 +56,10 @@ ul.open li { margin-bottom: 4px; overflow-wrap: anywhere; }
 
 <main>
   <h1>Claim ledger</h1>
-  <p class="sub">Every claim, its status, and its source. Shared rows: anyone who can write here sees your changes.</p>
+  <p class="sub">Every claim, its status, the side of its source, and the source itself. Shared rows: anyone who can write here sees your changes.</p>
+
+  <div class="banner" id="banner" hidden>Unapproved: the author has not reviewed these claims yet.</div>
+  <label class="approve"><input type="checkbox" id="unapproved"> Ledger unapproved</label>
 
   <div class="counts" id="counts"></div>
 
@@ -60,14 +67,14 @@ ul.open li { margin-bottom: 4px; overflow-wrap: anywhere; }
 
   <div class="tablewrap">
     <table>
-      <thead><tr><th>Claim</th><th>Status</th><th>Source</th><th>Date</th><th></th></tr></thead>
+      <thead><tr><th>Claim</th><th>Status</th><th>Side</th><th>Source</th><th>Date</th><th></th></tr></thead>
       <tbody id="rows"></tbody>
     </table>
     <div class="empty" id="empty" hidden></div>
   </div>
 
   <h2>Open items</h2>
-  <p class="sub" style="margin-top:0">Unverified and open claims. Copy into a reply or ask the author.</p>
+  <p class="sub" style="margin-top:0">Unverified claims. Copy into a reply or ask the author.</p>
   <ul class="open" id="open"></ul>
   <p class="empty" id="openEmpty" hidden style="text-align:left;padding:0">Nothing open.</p>
 
@@ -75,12 +82,19 @@ ul.open li { margin-bottom: 4px; overflow-wrap: anywhere; }
   <form class="add" id="addForm">
     <input name="claim" placeholder="Claim, as the text states it" required aria-label="Claim">
     <select name="status" aria-label="Status">
-      <option value="open">open</option>
+      <option value="unverified">unverified</option>
       <option value="true">true</option>
       <option value="partly_true">partly true</option>
       <option value="false">false</option>
-      <option value="unverified">unverified</option>
       <option value="opinion">opinion</option>
+      <option value="prediction">prediction</option>
+    </select>
+    <select name="side" aria-label="Side of the source">
+      <option value="">side: none</option>
+      <option value="camp_a">camp A</option>
+      <option value="camp_b">camp B</option>
+      <option value="mixed">mixed/official</option>
+      <option value="one_sided">one-sided</option>
     </select>
     <input name="source" placeholder="Source URL or reference" aria-label="Source">
     <input name="date" type="date" aria-label="Date of information">
@@ -90,22 +104,28 @@ ul.open li { margin-bottom: 4px; overflow-wrap: anywhere; }
 </main>
 
 <script>
-const STATUSES = ["open", "unverified", "opinion", "partly_true", "true", "false"];
-const LABEL = { open: "open", unverified: "unverified", opinion: "opinion", partly_true: "partly true", true: "true", false: "false" };
+const STATUSES = ["unverified", "true", "partly_true", "false", "opinion", "prediction"];
+const LABEL = { unverified: "unverified", true: "true", partly_true: "partly true", false: "false", opinion: "opinion", prediction: "prediction" };
+const SIDES = [["", "none"], ["camp_a", "camp A"], ["camp_b", "camp B"], ["mixed", "mixed/official"], ["one_sided", "one-sided"]];
 let rows = [];
 let filter = "all";
 let db = null;
+let unapproved = false;
+const armed = new Set();   // ids whose Delete is waiting for a second click
 
 const $ = (id) => document.getElementById(id);
 const el = (tag, props = {}, kids = []) => {
   const n = document.createElement(tag);
   for (const [k, v] of Object.entries(props)) {
+    if (v === null || v === false) continue;
     if (k === "text") n.textContent = v; else if (k === "class") n.className = v; else n.setAttribute(k, v);
   }
   for (const c of kids) n.append(c);
   return n;
 };
 const say = (text) => { $("msg").textContent = text; };
+// Only http(s) links: rows are shared, so a source like "javascript:..." must stay plain text.
+const safeHref = (s) => (/^https?:\/\//i.test(s || "") ? s : null);
 
 function renderCounts() {
   const counts = Object.fromEntries(STATUSES.map((s) => [s, 0]));
@@ -126,19 +146,27 @@ function renderRows() {
   $("empty").hidden = shown.length > 0;
   $("empty").textContent = rows.length ? "No claims with this status." : "No claims yet. Add the first one below.";
   $("rows").replaceChildren(...shown.map((r) => {
-    const sel = el("select", { "aria-label": "Status for " + (r.claim || r.id) }, STATUSES.map((s) => {
+    const sel = el("select", { "aria-label": "Status for " + (r.claim || r.id), disabled: db ? null : "" }, STATUSES.map((s) => {
       const o = el("option", { value: s, text: LABEL[s] }); if (s === r.status) o.selected = true; return o;
     }));
     sel.addEventListener("change", () => setStatus(r.id, sel.value));
-    const del = el("button", { type: "button", text: "Delete" });
+    const side = el("select", { "aria-label": "Side for " + (r.claim || r.id), disabled: db ? null : "" }, SIDES.map(([k, v]) => {
+      const o = el("option", { value: k, text: v }); if (k === (r.side || "")) o.selected = true; return o;
+    }));
+    side.addEventListener("change", () => setField(r.id, { side: side.value }));
+    const del = el("button", { type: "button", text: armed.has(r.id) ? "Confirm delete" : "Delete", disabled: db ? null : "" });
     del.addEventListener("click", () => {
-      if (del.dataset.armed) { removeRow(r.id); return; }
-      del.dataset.armed = "1"; del.textContent = "Confirm delete";
+      if (armed.has(r.id)) { removeRow(r.id); return; }
+      armed.add(r.id); render();
     });
-    const src = r.source ? el("td", { class: "src" }, [el("a", { href: r.source, target: "_blank", rel: "noopener", text: r.source })]) : el("td", { text: "" });
+    const href = safeHref(r.source);
+    const src = el("td", { class: "src" }, href
+      ? [el("a", { href, target: "_blank", rel: "noopener noreferrer", text: r.source })]
+      : [document.createTextNode(r.source || "")]);
     return el("tr", {}, [
       el("td", { text: r.claim || "" }),
       el("td", {}, [sel]),
+      el("td", {}, [side]),
       src,
       el("td", { class: "num", text: r.date || "" }),
       el("td", {}, [del]),
@@ -147,29 +175,45 @@ function renderRows() {
 }
 
 function renderOpen() {
-  const open = rows.filter((r) => r.status === "open" || r.status === "unverified");
-  $("open").replaceChildren(...open.map((r) => el("li", { text: r.claim + (r.status === "unverified" ? " (unverified)" : " (open)") })));
+  const open = rows.filter((r) => r.status === "unverified");
+  $("open").replaceChildren(...open.map((r) => el("li", { text: (r.claim || "") + " (unverified)" })));
   $("openEmpty").hidden = open.length > 0;
 }
 
-function render() { renderCounts(); renderFilters(); renderRows(); renderOpen(); }
-
-async function setStatus(id, status) {
-  if (!db) return say("Read-only: you cannot change claims here.");
-  try { await db.collection("claims").doc(id).update({ status }); say("Saved."); }
-  catch (e) { say(e.code === "invalid_argument" ? "Not allowed: your access is read-only." : "Could not save: " + (e.message || e.code)); }
+function renderUnapproved() {
+  $("banner").hidden = !unapproved;
+  $("unapproved").checked = unapproved;
+  $("unapproved").disabled = !db;
 }
+
+function render() { renderCounts(); renderFilters(); renderRows(); renderOpen(); renderUnapproved(); }
+
+// On failure, re-render from the last snapshot so the control shows the saved value again.
+async function setField(id, data) {
+  if (!db) return say("Read-only: you cannot change claims here.");
+  try { await db.collection("claims").doc(id).update(data); say("Saved."); }
+  catch (e) { render(); say(e.code === "invalid_argument" ? "Not allowed: your access is read-only." : "Could not save: " + (e.message || e.code)); }
+}
+const setStatus = (id, status) => setField(id, { status });
 
 async function removeRow(id) {
   if (!db) return;
-  try { await db.collection("claims").doc(id).delete(); say("Deleted."); }
-  catch (e) { say("Could not delete: " + (e.message || e.code)); }
+  try { await db.collection("claims").doc(id).delete(); armed.delete(id); say("Deleted."); }
+  catch (e) { render(); say("Could not delete: " + (e.message || e.code)); }
+}
+
+async function setUnapproved(value) {
+  if (!db) return;
+  try { await db.collection("meta").doc("ledger").set({ unapproved: value }); say(value ? "Marked unapproved." : "Marked approved."); }
+  catch (e) { render(); say("Could not save: " + (e.message || e.code)); }
 }
 
 $("filters").addEventListener("click", (e) => {
   const b = e.target.closest("button[data-f]"); if (!b) return;
   filter = b.dataset.f; render();
 });
+
+$("unapproved").addEventListener("change", (e) => setUnapproved(e.target.checked));
 
 $("addForm").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -179,8 +223,9 @@ $("addForm").addEventListener("submit", async (e) => {
   if (!db) return say("Read-only: you cannot add claims here.");
   try {
     await db.collection("claims").add({
-      claim, status: String(f.get("status")), source: String(f.get("source") || "").trim(),
-      date: String(f.get("date") || ""), created: new Date().toISOString(),
+      claim, status: String(f.get("status")), side: String(f.get("side") || ""),
+      source: String(f.get("source") || "").trim(), date: String(f.get("date") || ""),
+      created: new Date().toISOString(),
     });
     e.target.reset(); say("Added.");
   } catch (err) { say(err.code === "quota_exceeded" ? "The ledger is full." : "Could not add: " + (err.message || err.code)); }
@@ -189,9 +234,13 @@ $("addForm").addEventListener("submit", async (e) => {
 (async () => {
   render();
   try { db = window.claude ? await window.claude.use("db") : null; } catch (e) { db = null; }
-  if (!db) { $("addForm").hidden = true; say("Read-only view. Open this page in Claude to edit."); return; }
+  if (!db) { $("addForm").hidden = true; say("Read-only view. Open this page in Claude to edit."); render(); return; }
   db.collection("claims").orderBy("created", "desc").onSnapshot(
     (snap) => { rows = snap.docs.filter((d) => d.exists).map((d) => ({ id: d.id, ...d.data() })); render(); },
+    (err) => say("Live updates stopped: " + (err.message || err.code))
+  );
+  db.collection("meta").doc("ledger").onSnapshot(
+    (snap) => { unapproved = snap.exists && snap.data()?.unapproved === true; renderUnapproved(); },
     (err) => say("Live updates stopped: " + (err.message || err.code))
   );
 })();
