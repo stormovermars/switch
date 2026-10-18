@@ -20,6 +20,7 @@ Command: `/switch` followed by the text.
 ## Layout
 
 - `skills/switch/SKILL.md` – the skill (principles, procedure, manipulation techniques).
+- `skills/switch/ledger.html` – claim ledger page (publish as an artifact; needs the `db` capability).
 - `AGENTS.md` – the same instructions for tools that read AGENTS.md. Keep it in sync with the SKILL.md.
 - `skills/switch/tests/` – regression cases with expected results.
 - `CHANGELOG.md` – history of changes.
