@@ -148,12 +148,17 @@ function sourceNodes(source) {
 }
 
 function renderCounts() {
+  // Each status tile shows "Claude's count / effective count" (effective = with the author's overrides).
+  const mine = Object.fromEntries(STATUSES.map((s) => [s, 0]));
   const counts = Object.fromEntries(STATUSES.map((s) => [s, 0]));
   const active = rows.filter((r) => !isIgn(r));
-  active.forEach((r) => { if (eff(r) in counts) counts[eff(r)]++; });
+  active.forEach((r) => {
+    if (r.status in mine) mine[r.status]++;
+    if (eff(r) in counts) counts[eff(r)]++;
+  });
   $("counts").replaceChildren(
     el("div", { class: "count" }, [el("b", { text: String(active.length) }), el("span", { text: "total" })]),
-    ...STATUSES.map((s) => el("div", { class: "count" }, [el("b", { text: String(counts[s]) }), el("span", { text: LABEL[s] })])),
+    ...STATUSES.map((s) => el("div", { class: "count", title: "Claude's evaluation / with your overrides" }, [el("b", { text: mine[s] + "/" + counts[s] }), el("span", { text: LABEL[s] })])),
     el("div", { class: "count" }, [el("b", { text: String(rows.length - active.length) }), el("span", { text: "ignored" })])
   );
 }

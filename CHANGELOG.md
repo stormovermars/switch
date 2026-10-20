@@ -2,6 +2,11 @@
 
 The GitHub repository holds one squashed commit; the history of changes is kept here.
 
+## 1.5.2 – 2026-10-20 – Claude's count / your count
+
+- Claim ledger page: each status tile shows Claude's count and the count with the author's overrides, e.g. "unverified 3/1".
+- Version: 1.5.2 in every manifest.
+
 ## 1.5.1 – 2026-10-20 – ledger rows are ignored, not deleted
 
 - Claim ledger page: the row Delete (and its confirm click) is replaced by Ignore / Restore, which sets the boolean `ignored` field. Ignored rows are dimmed with the claim struck through, left out of the status counts and the open items, shown under a new "ignored" count tile and filter ("all" shows everything). The page never deletes rows.
