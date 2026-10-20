@@ -45,7 +45,7 @@ td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .approve input { width: auto; }
 .add { display: grid; gap: 8px; grid-template-columns: 1fr; margin-top: 12px; }
 @media (min-width: 640px) { .add { grid-template-columns: 2fr 1fr 1fr 1fr 1fr auto; } }
-.add input, .add select { min-width: 0; width: 100%; }
+.add input, .add select { min-width: 0; width: 100%; box-sizing: border-box; }
 .add button { background: var(--accent); color: var(--bg); border-color: var(--accent); }
 .msg { color: var(--muted); font-size: 13px; min-height: 1.4em; }
 ul.open { padding-left: 18px; margin: 0; }

@@ -2,6 +2,11 @@
 
 The GitHub repository holds one squashed commit; the history of changes is kept here.
 
+## 1.5.3 – 2026-10-20 – mobile form fix
+
+- Claim ledger page: add-form text fields no longer stick out past the dropdowns at phone width.
+- Version: 1.5.3 in every manifest.
+
 ## 1.5.2 – 2026-10-20 – Claude's count / your count
 
 - Claim ledger page: each status tile shows Claude's count and the count with the author's overrides, e.g. "unverified 3/1".
