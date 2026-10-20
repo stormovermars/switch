@@ -20,7 +20,7 @@ Term map: for each contested thing, note which word each camp uses for it, and w
 
 Claim ledger: one row per claim: the claim, its status (true / partly true / false / unverified / opinion / prediction), the source, and the date of the information. While checking, "not found yet" is a temporary sub-state; "unapproved" marks the whole ledger, not a row. Update it as the conversation goes. The final text is built from the ledger, so nothing is lost and nothing wrong comes back.
 
-If artifacts are available, publish `skills/switch/ledger.html` as the "Claim ledger" page with `capabilities: {"db": {}}`. Keep one row per claim in the `claims` collection (fields: claim, status, source, date, created). Update rows; don't rewrite the page.
+If artifacts are available, publish `skills/switch/ledger.html` as the "Claim ledger" page with `capabilities: {"db": {}}`. Keep one row per claim in the `claims` collection (fields: claim, status, side, source, date, created). `side` marks the source's side: camp A, camp B, mixed/official, or one-sided. The ledger's "unapproved" flag lives in the `meta` collection, document `ledger`. Update rows; don't rewrite the page.
 
 ### 3. Check
 
@@ -44,7 +44,7 @@ If artifacts are available, publish `skills/switch/ledger.html` as the "Claim le
 
 ### 5. Rewrite
 
-1. Keep the author's voice: order, topics, conclusion and language. Do not add a new frame, headlines or topics.
+1. Keep the author's voice: order, topics, conclusion and language. Do not add a new frame, headlines or topics. Change as little of the original text as possible: keep its sentences and words wherever they do not break a principle or a checked fact, and change only what the principles, the ledger or rules 5.2–5.8 require.
 2. Put no words in the author's mouth. Do not write things the author does not believe. The author's own claims stay theirs, marked as opinion ("I think…"), and are never attributed to someone else.
 3. Correct, don't delete: fix a partly true claim to its accurate version instead of dropping it. A claim found false is replaced by the accurate fact (with its reference), or dropped if the author agrees; never kept as opinion.
 4. Unverified stays, marked: if a claim cannot be verified, keep it but mark it as the author's opinion ("I think…", "as far as I know…"). A prediction stays the author's prediction ("I fear that…"). An observation stays the author's own account ("I saw in the video…", "according to the section I read…").
