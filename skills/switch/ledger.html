@@ -35,7 +35,7 @@ button:disabled, input:disabled { opacity: .6; cursor: default; }
 button.on { border-color: var(--accent); color: var(--accent); }
 button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
-table { border-collapse: collapse; width: 100%; min-width: 680px; }
+table { border-collapse: collapse; width: 100%; min-width: 760px; }
 th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
 th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 600; }
 td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -50,6 +50,7 @@ td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .msg { color: var(--muted); font-size: 13px; min-height: 1.4em; }
 ul.open { padding-left: 18px; margin: 0; }
 ul.open li { margin-bottom: 4px; overflow-wrap: anywhere; }
+.tag { display: inline-block; margin-left: 6px; padding: 0 6px; border: 1px solid var(--warn); color: var(--warn); border-radius: 10px; font-size: 11px; vertical-align: middle; }
 .src a { color: var(--accent); overflow-wrap: anywhere; }
 [hidden] { display: none !important; }
 </style>
@@ -67,7 +68,7 @@ ul.open li { margin-bottom: 4px; overflow-wrap: anywhere; }
 
   <div class="tablewrap">
     <table>
-      <thead><tr><th>Claim</th><th>Status</th><th>Side</th><th>Source</th><th>Date</th><th></th></tr></thead>
+      <thead><tr><th>Claim</th><th>Claude</th><th>Status</th><th>Side</th><th>Source</th><th>Date</th><th></th></tr></thead>
       <tbody id="rows"></tbody>
     </table>
     <div class="empty" id="empty" hidden></div>
@@ -96,7 +97,7 @@ ul.open li { margin-bottom: 4px; overflow-wrap: anywhere; }
       <option value="mixed">mixed/official</option>
       <option value="one_sided">one-sided</option>
     </select>
-    <input name="source" placeholder="Source URL or reference" aria-label="Source">
+    <input name="source" placeholder="Source URLs or references, separated by spaces" aria-label="Source">
     <input name="date" type="date" aria-label="Date of information">
     <button type="submit">Add</button>
   </form>
@@ -108,6 +109,9 @@ const STATUSES = ["unverified", "true", "partly_true", "false", "opinion", "pred
 const LABEL = { unverified: "unverified", true: "true", partly_true: "partly true", false: "false", opinion: "opinion", prediction: "prediction" };
 const SIDES = [["", "none"], ["camp_a", "camp A"], ["camp_b", "camp B"], ["mixed", "mixed/official"], ["one_sided", "one-sided"]];
 let rows = [];
+// `status` is Claude's evaluation and is never written for existing rows. `override` is the author's manual
+// choice. The db has no field-delete, so "no override" is the empty string; "" and absent both mean none.
+const eff = (r) => r.override || r.status;
 let filter = "all";
 let db = null;
 let unapproved = false;
@@ -126,10 +130,23 @@ const el = (tag, props = {}, kids = []) => {
 const say = (text) => { $("msg").textContent = text; };
 // Only http(s) links: rows are shared, so a source like "javascript:..." must stay plain text.
 const safeHref = (s) => (/^https?:\/\//i.test(s || "") ? s : null);
+// `source` holds one or more references split by whitespace, commas or newlines. Each URL becomes
+// link1, link2, ... (numbered within the row); other pieces stay plain text.
+function sourceNodes(source) {
+  const out = [];
+  let n = 0;
+  String(source || "").split(/[\s,]+/).filter(Boolean).forEach((p) => {
+    if (out.length) out.push(document.createTextNode(" "));
+    const href = safeHref(p);
+    if (href) { n++; out.push(el("a", { href, title: href, target: "_blank", rel: "noopener noreferrer", text: "link" + n })); }
+    else out.push(document.createTextNode(p));
+  });
+  return out;
+}
 
 function renderCounts() {
   const counts = Object.fromEntries(STATUSES.map((s) => [s, 0]));
-  rows.forEach((r) => { if (r.status in counts) counts[r.status]++; });
+  rows.forEach((r) => { if (eff(r) in counts) counts[eff(r)]++; });
   $("counts").replaceChildren(
     el("div", { class: "count" }, [el("b", { text: String(rows.length) }), el("span", { text: "total" })]),
     ...STATUSES.map((s) => el("div", { class: "count" }, [el("b", { text: String(counts[s]) }), el("span", { text: LABEL[s] })]))
@@ -142,14 +159,17 @@ function renderFilters() {
 }
 
 function renderRows() {
-  const shown = filter === "all" ? rows : rows.filter((r) => r.status === filter);
+  const shown = filter === "all" ? rows : rows.filter((r) => eff(r) === filter);
   $("empty").hidden = shown.length > 0;
   $("empty").textContent = rows.length ? "No claims with this status." : "No claims yet. Add the first one below.";
   $("rows").replaceChildren(...shown.map((r) => {
-    const sel = el("select", { "aria-label": "Status for " + (r.claim || r.id), disabled: db ? null : "" }, STATUSES.map((s) => {
-      const o = el("option", { value: s, text: LABEL[s] }); if (s === r.status) o.selected = true; return o;
-    }));
-    sel.addEventListener("change", () => setStatus(r.id, sel.value));
+    const cur = eff(r), overridden = !!r.override && r.override !== r.status;
+    const opts = STATUSES.map((s) => {
+      const o = el("option", { value: s, text: LABEL[s] }); if (s === cur) o.selected = true; return o;
+    });
+    if (overridden) opts.push(el("option", { value: "__reset", text: "reset to Claude's" }));
+    const sel = el("select", { "aria-label": "Status for " + (r.claim || r.id), disabled: db ? null : "" }, opts);
+    sel.addEventListener("change", () => setStatus(r, sel.value));
     const side = el("select", { "aria-label": "Side for " + (r.claim || r.id), disabled: db ? null : "" }, SIDES.map(([k, v]) => {
       const o = el("option", { value: k, text: v }); if (k === (r.side || "")) o.selected = true; return o;
     }));
@@ -159,13 +179,11 @@ function renderRows() {
       if (armed.has(r.id)) { removeRow(r.id); return; }
       armed.add(r.id); render();
     });
-    const href = safeHref(r.source);
-    const src = el("td", { class: "src" }, href
-      ? [el("a", { href, target: "_blank", rel: "noopener noreferrer", text: r.source })]
-      : [document.createTextNode(r.source || "")]);
+    const src = el("td", { class: "src" }, sourceNodes(r.source));
     return el("tr", {}, [
       el("td", { text: r.claim || "" }),
-      el("td", {}, [sel]),
+      el("td", { text: LABEL[r.status] || r.status || "" }),
+      el("td", {}, overridden ? [sel, el("span", { class: "tag", title: "Manual override of Claude's evaluation", text: "manual" })] : [sel]),
       el("td", {}, [side]),
       src,
       el("td", { class: "num", text: r.date || "" }),
@@ -175,7 +193,7 @@ function renderRows() {
 }
 
 function renderOpen() {
-  const open = rows.filter((r) => r.status === "unverified");
+  const open = rows.filter((r) => eff(r) === "unverified");
   $("open").replaceChildren(...open.map((r) => el("li", { text: (r.claim || "") + " (unverified)" })));
   $("openEmpty").hidden = open.length > 0;
 }
@@ -194,7 +212,14 @@ async function setField(id, data) {
   try { await db.collection("claims").doc(id).update(data); say("Saved."); }
   catch (e) { render(); say(e.code === "invalid_argument" ? "Not allowed: your access is read-only." : "Could not save: " + (e.message || e.code)); }
 }
-const setStatus = (id, status) => setField(id, { status });
+// Writes only `override`, never `status`. Picking Claude's own value (or the reset option) clears it.
+function setStatus(r, value) {
+  if (value === "__reset" || value === r.status) {
+    if (r.override) return setField(r.id, { override: "" });
+    return render();
+  }
+  return setField(r.id, { override: value });
+}
 
 async function removeRow(id) {
   if (!db) return;

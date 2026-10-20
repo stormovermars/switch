@@ -2,6 +2,14 @@
 
 The GitHub repository holds one squashed commit; the history of changes is kept here.
 
+## 1.5.0 – 2026-10-20 – ledger by default, lawful exception, valts parity
+
+- Claim ledger page: published by default, without being asked, as soon as the first check is done and before the step 4.1 report; its link goes at the top of that report; the same page (URL) is kept for the whole conversation so it stays listed in the session's artifacts.
+- Manipulation techniques: a technique that is lawful, respects human dignity and human rights, and harms no one (including the person it is aimed at) may appear in our own writing and is named but not counted as a violation when flagged; human rights always count.
+- valts brought to full parity with switch: same rules, numbering, ledger page (Hungarian UI, identical data fields and collections), tests and AGENTS.md; the ledger page title is "Állításnapló" and SKILL.md refers to it by that name.
+- Claim ledger page: new `override` field for the author's manual status choice (Claude's `status` is never overwritten; the page shows both, marks overridden rows, and counts/filters use the effective status); `source` may hold several URLs, shown as link1, link2…
+- Version: 1.5.0 in every manifest.
+
 ## 1.4.0 – 2026-10-18 – audit fixes
 
 - Statuses: one list everywhere (true / partly true / false / unverified / opinion / prediction); "not found yet" is a temporary sub-state, "unapproved" marks the whole ledger; "open" is no longer a status.

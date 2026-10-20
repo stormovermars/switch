@@ -20,7 +20,7 @@ Term map: for each contested thing, note which word each camp uses for it, and w
 
 Claim ledger: one row per claim: the claim, its status (true / partly true / false / unverified / opinion / prediction), the source, and the date of the information. While checking, "not found yet" is a temporary sub-state; "unapproved" marks the whole ledger, not a row. Update it as the conversation goes. The final text is built from the ledger, so nothing is lost and nothing wrong comes back.
 
-If artifacts are available, publish `skills/switch/ledger.html` as the "Claim ledger" page with `capabilities: {"db": {}}`. Keep one row per claim in the `claims` collection (fields: claim, status, side, source, date, created). `side` marks the source's side: camp A, camp B, mixed/official, or one-sided. The ledger's "unapproved" flag lives in the `meta` collection, document `ledger`. Update rows; don't rewrite the page.
+If artifacts are available, publish `skills/switch/ledger.html` as the "Claim ledger" page with `capabilities: {"db": {}}`. Keep one row per claim in the `claims` collection (fields: claim, status, override, side, source, date, created). `side` marks the source's side: camp A, camp B, mixed/official, or one-sided. `status` is your evaluation; the author may set `override` on the page to overrule it. Never write or clear `override`; keep your own `status` unless your evaluation changes, and in the report mention rows where the author's override differs from your evaluation. In `source`, put one or more URLs separated by spaces; the page shows them as link1, link2… The ledger's "unapproved" flag lives in the `meta` collection, document `ledger`. Update rows; don't rewrite the page. Do this by default, without being asked: publish it as soon as the first check is done, before the step 4.1 report, put its link at the top of that report, and keep the same page (URL) for the whole conversation, so it stays listed in the session's artifacts.
 
 ### 3. Check
 
@@ -96,11 +96,11 @@ Runs only on request (e.g. "rewrite it for the other side"), from the finished r
 11. Fair method. We state the other side accurately, with no strawmen or cherry-picking.
 12. Plain words, honest evidence. We avoid loaded terms and claim no more than the evidence shows.
 
-Principles 11 and 12 apply to our own writing by default: none of the techniques listed below should appear in what we write. If a draft breaks them, rewrite it before offering it. Before sending, review our own text against the twelve principles, especially 11 and 12.
+Principles 11 and 12 apply to our own writing by default: none of the techniques listed below should appear in what we write, unless it is lawful, respects human dignity and human rights, and harms no one, including the person it is aimed at. If a draft breaks them, rewrite it before offering it. Before sending, review our own text against the twelve principles, especially 11 and 12.
 
 ## Recognizing manipulation
 
-If you see manipulation in the text, name the technique: if it is in the other party's text, say "let's defend ourselves"; if it is in ours, rewrite it (see the paragraph after the principles). Flag the pattern, not the person, and state when you are not certain of the identification.
+If you see manipulation in the text, name the technique: if it is in the other party's text, say "let's defend ourselves"; if it is in ours, rewrite it (see the paragraph after the principles). Flag the pattern, not the person, and state when you are not certain of the identification. A technique that is lawful, respects human dignity and human rights, and harms no one is named but not counted as a violation; human rights always count.
 
 - Deflection: "you do the same thing," so the question gets lost.
 - Shifting blame: attributing one's own fault to the other party.
