@@ -51,6 +51,8 @@ td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
 ul.open { padding-left: 18px; margin: 0; }
 ul.open li { margin-bottom: 4px; overflow-wrap: anywhere; }
 .tag { display: inline-block; margin-left: 6px; padding: 0 6px; border: 1px solid var(--warn); color: var(--warn); border-radius: 10px; font-size: 11px; vertical-align: middle; }
+tr.ignored td:not(:last-child) { opacity: .5; }
+tr.ignored td.claim { text-decoration: line-through; }
 .src a { color: var(--accent); overflow-wrap: anywhere; }
 [hidden] { display: none !important; }
 </style>
@@ -115,7 +117,8 @@ const eff = (r) => r.override || r.status;
 let filter = "all";
 let db = null;
 let unapproved = false;
-const armed = new Set();   // ids whose Delete is waiting for a second click
+// `ignored` (boolean) is the author's flag: the row stays, dimmed, and is left out of counts and open items. Rows are never deleted here.
+const isIgn = (r) => r.ignored === true;
 
 const $ = (id) => document.getElementById(id);
 const el = (tag, props = {}, kids = []) => {
@@ -146,20 +149,22 @@ function sourceNodes(source) {
 
 function renderCounts() {
   const counts = Object.fromEntries(STATUSES.map((s) => [s, 0]));
-  rows.forEach((r) => { if (eff(r) in counts) counts[eff(r)]++; });
+  const active = rows.filter((r) => !isIgn(r));
+  active.forEach((r) => { if (eff(r) in counts) counts[eff(r)]++; });
   $("counts").replaceChildren(
-    el("div", { class: "count" }, [el("b", { text: String(rows.length) }), el("span", { text: "total" })]),
-    ...STATUSES.map((s) => el("div", { class: "count" }, [el("b", { text: String(counts[s]) }), el("span", { text: LABEL[s] })]))
+    el("div", { class: "count" }, [el("b", { text: String(active.length) }), el("span", { text: "total" })]),
+    ...STATUSES.map((s) => el("div", { class: "count" }, [el("b", { text: String(counts[s]) }), el("span", { text: LABEL[s] })])),
+    el("div", { class: "count" }, [el("b", { text: String(rows.length - active.length) }), el("span", { text: "ignored" })])
   );
 }
 
 function renderFilters() {
   const make = (key, label) => el("button", { type: "button", class: filter === key ? "on" : "", "data-f": key, text: label });
-  $("filters").replaceChildren(make("all", "all"), ...STATUSES.map((s) => make(s, LABEL[s])));
+  $("filters").replaceChildren(make("all", "all"), ...STATUSES.map((s) => make(s, LABEL[s])), make("ignored", "ignored"));
 }
 
 function renderRows() {
-  const shown = filter === "all" ? rows : rows.filter((r) => eff(r) === filter);
+  const shown = filter === "all" ? rows : filter === "ignored" ? rows.filter(isIgn) : rows.filter((r) => !isIgn(r) && eff(r) === filter);
   $("empty").hidden = shown.length > 0;
   $("empty").textContent = rows.length ? "No claims with this status." : "No claims yet. Add the first one below.";
   $("rows").replaceChildren(...shown.map((r) => {
@@ -174,26 +179,24 @@ function renderRows() {
       const o = el("option", { value: k, text: v }); if (k === (r.side || "")) o.selected = true; return o;
     }));
     side.addEventListener("change", () => setField(r.id, { side: side.value }));
-    const del = el("button", { type: "button", text: armed.has(r.id) ? "Confirm delete" : "Delete", disabled: db ? null : "" });
-    del.addEventListener("click", () => {
-      if (armed.has(r.id)) { removeRow(r.id); return; }
-      armed.add(r.id); render();
-    });
+    const ig = isIgn(r);
+    const ignBtn = el("button", { type: "button", text: ig ? "Restore" : "Ignore", disabled: db ? null : "" });
+    ignBtn.addEventListener("click", () => setField(r.id, { ignored: !ig }));
     const src = el("td", { class: "src" }, sourceNodes(r.source));
-    return el("tr", {}, [
-      el("td", { text: r.claim || "" }),
+    return el("tr", { class: ig ? "ignored" : "" }, [
+      el("td", { class: "claim", text: r.claim || "" }),
       el("td", { text: LABEL[r.status] || r.status || "" }),
       el("td", {}, overridden ? [sel, el("span", { class: "tag", title: "Manual override of Claude's evaluation", text: "manual" })] : [sel]),
       el("td", {}, [side]),
       src,
       el("td", { class: "num", text: r.date || "" }),
-      el("td", {}, [del]),
+      el("td", {}, [ignBtn]),
     ]);
   }));
 }
 
 function renderOpen() {
-  const open = rows.filter((r) => eff(r) === "unverified");
+  const open = rows.filter((r) => !isIgn(r) && eff(r) === "unverified");
   $("open").replaceChildren(...open.map((r) => el("li", { text: (r.claim || "") + " (unverified)" })));
   $("openEmpty").hidden = open.length > 0;
 }
@@ -219,12 +222,6 @@ function setStatus(r, value) {
     return render();
   }
   return setField(r.id, { override: value });
-}
-
-async function removeRow(id) {
-  if (!db) return;
-  try { await db.collection("claims").doc(id).delete(); armed.delete(id); say("Deleted."); }
-  catch (e) { render(); say("Could not delete: " + (e.message || e.code)); }
 }
 
 async function setUnapproved(value) {

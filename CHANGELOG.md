@@ -2,6 +2,12 @@
 
 The GitHub repository holds one squashed commit; the history of changes is kept here.
 
+## 1.5.1 – 2026-10-20 – ledger rows are ignored, not deleted
+
+- Claim ledger page: the row Delete (and its confirm click) is replaced by Ignore / Restore, which sets the boolean `ignored` field. Ignored rows are dimmed with the claim struck through, left out of the status counts and the open items, shown under a new "ignored" count tile and filter ("all" shows everything). The page never deletes rows.
+- SKILL.md: `ignored` added to the ledger fields; ignored rows stay out of the report and the rewrite, the flag is never cleared by Claude, and rows are never deleted.
+- Version: 1.5.1 in every manifest.
+
 ## 1.5.0 – 2026-10-20 – ledger by default, lawful exception, valts parity
 
 - Claim ledger page: published by default, without being asked, as soon as the first check is done and before the step 4.1 report; its link goes at the top of that report; the same page (URL) is kept for the whole conversation so it stays listed in the session's artifacts.
