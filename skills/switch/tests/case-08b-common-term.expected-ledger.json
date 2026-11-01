@@ -1,0 +1,26 @@
+{
+  "case": "case-08",
+  "edition": "both",
+  "lenses": {
+    "etiquette": "on",
+    "manipulation": "on"
+  },
+  "rows_present": [
+    "p*",
+    "m*"
+  ],
+  "term_map_rows": [
+    {
+      "match_term_en": "dictatorship",
+      "match_by": "name",
+      "cites_common_terms_id": true,
+      "states_both_sides": true,
+      "cites_defining_criteria": true
+    }
+  ],
+  "etiquette_always_on": true,
+  "judge_items": [
+    "The term-map row for the leader label cites the common-terms row for dictatorship and states both sides.",
+    "The defining criteria are named and the rewrite either names concrete measures or marks the label as opinion."
+  ]
+}

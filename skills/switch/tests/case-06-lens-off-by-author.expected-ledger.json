@@ -1,0 +1,19 @@
+{
+  "case": "case-06",
+  "edition": "both",
+  "lenses": {
+    "etiquette": "on",
+    "rule-of-law": "off",
+    "manipulation": "off",
+    "press": "off",
+    "law": "off"
+  },
+  "rows_present": [
+    "p*"
+  ],
+  "etiquette_always_on": true,
+  "judge_items": [
+    "After each switch-off the lens is not reported and drives no rewrite wording.",
+    "After the law lens is off, no statute section is cited."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "case": "case-02",
+  "edition": "both",
+  "lenses": {
+    "etiquette": "on",
+    "manipulation": "on",
+    "rule-of-law": [
+      "off",
+      "offered"
+    ],
+    "law": [
+      "on",
+      "offered"
+    ]
+  },
+  "rows_present": [
+    "p*"
+  ],
+  "rows_absent": [
+    "l*"
+  ],
+  "etiquette_always_on": true,
+  "judge_items": [
+    "No statute section is cited without having been read in the law's text.",
+    "The rewrite for the other camp keeps its facts and drops its labels."
+  ]
+}

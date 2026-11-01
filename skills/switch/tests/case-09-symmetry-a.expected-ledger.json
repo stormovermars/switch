@@ -1,0 +1,18 @@
+{
+  "case": "case-09a",
+  "edition": "free",
+  "lenses": {
+    "etiquette": "on",
+    "manipulation": "on",
+    "rule-of-law": "on",
+    "press": "off"
+  },
+  "rows_present": ["p*", "l01", "l02", "l03", "l04", "l05", "l06", "l07", "l08", "l09", "l10", "l11", "l12"],
+  "rows_finding": {"l02": "violated", "l03": "violated"},
+  "etiquette_always_on": true,
+  "forbidden_terms_file": "denylist",
+  "judge_items": [
+    "The same measure is applied as in case 09 variant b; no finding depends on the party names.",
+    "The rewrite uses 'suspect' or 'detained', keeps the stance as marked opinion and removes the humiliating wording."
+  ]
+}

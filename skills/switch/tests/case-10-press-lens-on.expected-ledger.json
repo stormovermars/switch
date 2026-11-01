@@ -1,0 +1,20 @@
+{
+  "case": "case-10",
+  "edition": "both",
+  "lenses": {
+    "etiquette": "on",
+    "manipulation": "on",
+    "press": "on",
+    "rule-of-law": "off",
+    "law": ["off", "offered"]
+  },
+  "rows_present": ["p*", "m*"],
+  "rows_absent": ["l*"],
+  "etiquette_always_on": true,
+  "judge_items": [
+    "The affected party (Mr. Rowe) is reported as not heard, and the open items ask whether he was contacted.",
+    "Fact and opinion are reported as mixed, and the rewrite separates them or marks opinion.",
+    "The private person's address and the minor daughter are reported as exposed and removed in the rewrite.",
+    "No rule-of-law wording appears: the dispute is civil, not a criminal proceeding."
+  ]
+}

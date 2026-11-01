@@ -1,0 +1,32 @@
+{
+  "case": "case-03-hu",
+  "edition": "free",
+  "lenses": {
+    "etiquette": "on",
+    "manipulation": "on",
+    "rule-of-law": "on"
+  },
+  "rows_present": [
+    "p*",
+    "m*",
+    "l02",
+    "l03",
+    "l05",
+    "l07",
+    "l08"
+  ],
+  "rows_finding": {
+    "l02": "violated",
+    "l03": "violated",
+    "l05": "violated",
+    "l07": "violated",
+    "l08": "violated"
+  },
+  "etiquette_always_on": true,
+  "forbidden_terms_file": "denylist",
+  "judge_items": [
+    "The pretextual-revenge claims are treated as unverified, not as false, because the decision was not seen.",
+    "The rewrite uses 'gyanúsított' (suspect) instead of 'bűnöző' (criminal) and puts no words in anyone's mouth.",
+    "The report and the rewrite are in Hungarian, the author's language."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "case": "case-05",
+  "edition": "both",
+  "lenses": {
+    "etiquette": "on"
+  },
+  "rows_present": [
+    "p*"
+  ],
+  "etiquette_always_on": true,
+  "judge_items": [
+    "One line says the etiquette rules always apply while other lenses can be switched.",
+    "The author's 'n/a' on p09 is reported as not applied; the p09 finding stays in the report and the rewrite."
+  ]
+}

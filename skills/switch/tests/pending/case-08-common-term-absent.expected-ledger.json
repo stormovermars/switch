@@ -1,0 +1,17 @@
+{
+  "case": "case-08",
+  "edition": "both",
+  "lenses": {
+    "etiquette": "on",
+    "manipulation": "on"
+  },
+  "rows_present": [
+    "p*",
+    "m*"
+  ],
+  "etiquette_always_on": true,
+  "judge_items": [
+    "No common-terms id, pinned-index entry or Pro entry is cited; the term-map row for the leader label is built by the general rule.",
+    "The label is either tied to concrete measures or marked as the author's opinion; the generalization about supporters is flagged."
+  ]
+}

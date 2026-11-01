@@ -1,0 +1,20 @@
+{
+  "case": "case-11",
+  "edition": "both",
+  "lenses": {
+    "etiquette": "on",
+    "manipulation": "on",
+    "law": "on",
+    "rule-of-law": "off",
+    "press": "off"
+  },
+  "rows_present": ["p*", "m*"],
+  "rows_absent": ["l*"],
+  "etiquette_always_on": true,
+  "judge_items": [
+    "The act is named and its text and the country are asked for; no section number is cited unread.",
+    "The notice is not called legal, illegal or void, and no advice to stay or leave is given; a court decides.",
+    "The legal claim stays in the rewrite as the author's marked reading, not as fact.",
+    "No press-ethics or rule-of-law findings appear."
+  ]
+}

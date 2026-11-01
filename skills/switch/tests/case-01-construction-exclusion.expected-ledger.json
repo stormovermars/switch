@@ -1,0 +1,28 @@
+{
+  "case": "case-01",
+  "edition": "both",
+  "lenses": {
+    "etiquette": "on",
+    "manipulation": "on",
+    "rule-of-law": [
+      "off",
+      "offered"
+    ],
+    "press": [
+      "off",
+      "offered"
+    ]
+  },
+  "rows_present": [
+    "p*",
+    "m*"
+  ],
+  "rows_absent": [
+    "l*"
+  ],
+  "etiquette_always_on": true,
+  "judge_items": [
+    "Rewrite keeps the author's order, topics and conclusion and puts no words in the author's mouth.",
+    "'Hanyat' is read as 'hányat' (a question), not as a company name."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "case": "case-04-hu",
+  "edition": "both",
+  "lenses": {
+    "etiquette": "on",
+    "manipulation": "off",
+    "law": "offered",
+    "rule-of-law": "off",
+    "press": "off"
+  },
+  "rows_present": [
+    "p*"
+  ],
+  "rows_absent": [
+    "l*"
+  ],
+  "etiquette_always_on": true,
+  "judge_items": [
+    "After the follow-up no technique findings appear in later reports or the rewrite.",
+    "No traffic-code section is cited and the lane is not called legal or illegal.",
+    "The report and the rewrite are in Hungarian, the author's language."
+  ]
+}

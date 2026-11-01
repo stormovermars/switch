@@ -1,0 +1,439 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Claim ledger</title>
+<style>
+/* Layout: summary counts, filters, the claim table, the unapproved flag, open items, then the add form. */
+:root {
+  --bg: #fafaf7; --fg: #1d1d1b; --muted: #66665f; --line: #dcdcd5; --surface: #ffffff;
+  --accent: #2f5d7c; --warn: #8a5a00;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161715; --fg: #ecebe6; --muted: #9a9a92; --line: #3a3b37; --surface: #1f201d;
+    --accent: #8fbcd6; --warn: #e6b65c; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161715; --fg: #ecebe6; --muted: #9a9a92; --line: #3a3b37; --surface: #1f201d;
+  --accent: #8fbcd6; --warn: #e6b65c; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { padding-block: 20px 40px; padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); max-width: 980px; margin: 0 auto; }
+h1 { font-size: 22px; margin: 0 0 4px; text-wrap: balance; }
+h2 { font-size: 16px; margin: 28px 0 8px; }
+.sub { color: var(--muted); margin: 0 0 16px; }
+.counts { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.count { border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; background: var(--surface); min-width: 0; }
+.count b { font-variant-numeric: tabular-nums; font-size: 18px; display: block; }
+.count span { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+button, select, input { font: inherit; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; }
+button { cursor: pointer; }
+button:disabled, input:disabled { opacity: .6; cursor: default; }
+button.on { border-color: var(--accent); color: var(--accent); }
+button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 760px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 600; }
+td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.empty { padding: 24px; color: var(--muted); text-align: center; }
+.banner { border: 1px solid var(--warn); color: var(--warn); border-radius: 6px; padding: 8px 10px; margin-bottom: 12px; }
+.approve { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; color: var(--muted); }
+.approve input { width: auto; }
+.add { display: grid; gap: 8px; grid-template-columns: 1fr; margin-top: 12px; }
+@media (min-width: 640px) { .add { grid-template-columns: 2fr 1fr 1fr 1fr 1fr auto; } }
+.add input, .add select { min-width: 0; width: 100%; box-sizing: border-box; }
+.add button { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.msg { color: var(--muted); font-size: 13px; min-height: 1.4em; }
+ul.open { padding-left: 18px; margin: 0; }
+ul.open li { margin-bottom: 4px; overflow-wrap: anywhere; }
+.tag { display: inline-block; margin-left: 6px; padding: 0 6px; border: 1px solid var(--warn); color: var(--warn); border-radius: 10px; font-size: 11px; vertical-align: middle; }
+tr.ignored td:not(:last-child) { opacity: .5; }
+tr.ignored td.claim { text-decoration: line-through; }
+.src a { color: var(--accent); overflow-wrap: anywhere; }
+.src a.untrusted { color: var(--warn); }
+.src a.untrusted::after { content: " \26A0"; }
+small.note { display: block; color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+[hidden] { display: none !important; }
+</style>
+
+<main>
+  <h1>Claim ledger</h1>
+  <p class="sub">Every claim, its status, the side of its source, and the source itself. Shared rows: anyone who can write here sees your changes.</p>
+
+  <div class="banner" id="banner" hidden>Unapproved: the author has not reviewed these claims yet.</div>
+  <label class="approve"><input type="checkbox" id="unapproved"> Ledger unapproved</label>
+
+  <div class="counts" id="counts"></div>
+
+  <div class="filters" id="filters"></div>
+
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Claim</th><th>Claude</th><th>Status</th><th>Side</th><th>Source</th><th>Date</th><th></th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="empty" id="empty" hidden></div>
+  </div>
+
+  <h2>Sources</h2>
+  <p class="sub" style="margin-top:0">One row per source domain: Claude's assessment (trust, side, reason) and your own. Your choices are kept separately and never change Claude's.</p>
+  <div class="counts" id="srcCounts"></div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Domain</th><th>Claude</th><th>Side</th><th>Trust</th><th>Uses</th></tr></thead>
+      <tbody id="srcRows"></tbody>
+    </table>
+    <div class="empty" id="srcEmpty" hidden></div>
+  </div>
+
+  <h2>Checklist</h2>
+  <p class="sub" style="margin-top:0">Twelve principles, the manipulation techniques and, for criminal proceedings, the rule-of-law points, as Claude checked them in this text. &quot;n/a&quot; means not applied to this text: use it to switch a technique or rule-of-law check off. The principles are always on: an &quot;n/a&quot; on a principle is ignored.</p>
+  <div class="counts" id="chkCounts"></div>
+  <p class="empty" id="chkEmpty" hidden style="text-align:left;padding:0">No checks yet.</p>
+  <h3 id="pHead">Principles</h3>
+  <div class="tablewrap" id="pWrap">
+    <table><thead><tr><th>Check</th><th>Claude</th><th>Result</th></tr></thead><tbody id="pRows"></tbody></table>
+  </div>
+  <h3 id="tHead">Manipulation techniques</h3>
+  <div class="tablewrap" id="tWrap">
+    <table><thead><tr><th>Check</th><th>Claude</th><th>Result</th></tr></thead><tbody id="tRows"></tbody></table>
+  </div>
+  <h3 id="lHead">Rule-of-law standard (criminal proceedings)</h3>
+  <div class="tablewrap" id="lWrap">
+    <table><thead><tr><th>Check</th><th>Claude</th><th>Result</th></tr></thead><tbody id="lRows"></tbody></table>
+  </div>
+
+  <h2>Open items</h2>
+  <p class="sub" style="margin-top:0">Unverified claims. Copy into a reply or ask the author.</p>
+  <ul class="open" id="open"></ul>
+  <p class="empty" id="openEmpty" hidden style="text-align:left;padding:0">Nothing open.</p>
+
+  <h2>Add a claim</h2>
+  <form class="add" id="addForm">
+    <input name="claim" placeholder="Claim, as the text states it" required aria-label="Claim">
+    <select name="status" aria-label="Status">
+      <option value="unverified">unverified</option>
+      <option value="true">true</option>
+      <option value="partly_true">partly true</option>
+      <option value="false">false</option>
+      <option value="opinion">opinion</option>
+      <option value="prediction">prediction</option>
+    </select>
+    <select name="side" aria-label="Side of the source">
+      <option value="">side: none</option>
+      <option value="camp_a">camp A</option>
+      <option value="camp_b">camp B</option>
+      <option value="mixed">mixed/official</option>
+      <option value="one_sided">one-sided</option>
+    </select>
+    <input name="source" placeholder="Source URLs or references, separated by spaces" aria-label="Source">
+    <input name="date" type="date" aria-label="Date of information">
+    <button type="submit">Add</button>
+  </form>
+  <div class="msg" id="msg" role="status"></div>
+</main>
+
+<script>
+const STATUSES = ["unverified", "true", "partly_true", "false", "opinion", "prediction"];
+const LABEL = { unverified: "unverified", true: "true", partly_true: "partly true", false: "false", opinion: "opinion", prediction: "prediction" };
+const SIDES = [["", "none"], ["camp_a", "camp A"], ["camp_b", "camp B"], ["mixed", "mixed/official"], ["one_sided", "one-sided"]];
+let rows = [];
+// `status` is Claude's evaluation and is never written for existing rows. `override` is the author's manual
+// choice. The db has no field-delete, so "no override" is the empty string; "" and absent both mean none.
+const eff = (r) => r.override || r.status;
+let filter = "all";
+let db = null;
+let unapproved = false;
+let metaLedger = {}; // the whole meta/ledger document, so saving the flag keeps `lenses`
+// `ignored` (boolean) is the author's flag: the row stays, dimmed, and is left out of counts and open items. Rows are never deleted here.
+const isIgn = (r) => r.ignored === true;
+
+const $ = (id) => document.getElementById(id);
+const el = (tag, props = {}, kids = []) => {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(props)) {
+    if (v === null || v === false) continue;
+    if (k === "text") n.textContent = v; else if (k === "class") n.className = v; else n.setAttribute(k, v);
+  }
+  for (const c of kids) n.append(c);
+  return n;
+};
+const say = (text) => { $("msg").textContent = text; };
+// Only http(s) links: rows are shared, so a source like "javascript:..." must stay plain text.
+const safeHref = (s) => (/^https?:\/\//i.test(s || "") ? s : null);
+// `source` holds one or more references split by whitespace, commas or newlines. Each URL becomes
+// link1, link2, ... (numbered within the row); other pieces stay plain text.
+function sourceNodes(source) {
+  const out = [];
+  let n = 0;
+  String(source || "").split(/[\s,]+/).filter(Boolean).forEach((p) => {
+    if (out.length) out.push(document.createTextNode(" "));
+    const href = safeHref(p);
+    if (href) {
+      n++;
+      const src = sourceFor(hostOf(href)), bad = src && effTrust(src) === "untrusted";
+      out.push(el("a", { href, title: bad ? "untrusted source" : href, class: bad ? "untrusted" : null, target: "_blank", rel: "noopener noreferrer", text: "link" + n }));
+    }
+    else out.push(document.createTextNode(p));
+  });
+  return out;
+}
+
+let sources = [];
+// Same two-layer pattern as claims: `trust` and `side` are Claude's assessment, never written by the page.
+// `override` (trust) and `side_override` (side) are the author's; "" and absent both mean none.
+const effTrust = (s) => s.override || s.trust || "";
+const effSide = (s) => s.side_override || s.side || "";
+const TLABEL = { trusted: "trusted", untrusted: "untrusted", "": "not rated" };
+const sideLabel = (k) => (SIDES.find((x) => x[0] === k) || [k, k])[1];
+const hostOf = (u) => { try { return new URL(u).hostname.toLowerCase().replace(/^www\./, ""); } catch (e) { return ""; } };
+// A URL belongs to a source when its host equals the source domain or is a subdomain of it.
+const sourceFor = (host) => {
+  if (!host) return null;
+  let best = null;
+  for (const s of sources) {
+    const d = String(s.domain || s.id || "").toLowerCase().replace(/^www\./, "");
+    if (d && (host === d || host.endsWith("." + d)) && (!best || d.length > best.d.length)) best = { d, s };
+  }
+  return best ? best.s : null;
+};
+
+function renderSources() {
+  const mineT = { trusted: 0, untrusted: 0 }, effT = { trusted: 0, untrusted: 0 };
+  sources.forEach((s) => { if (s.trust in mineT) mineT[s.trust]++; if (effTrust(s) in effT) effT[effTrust(s)]++; });
+  $("srcCounts").replaceChildren(...["trusted", "untrusted"].map((k) =>
+    el("div", { class: "count", title: "Claude's rating / with your overrides" }, [el("b", { text: mineT[k] + "/" + effT[k] }), el("span", { text: TLABEL[k] })])));
+  const uses = {};
+  rows.filter((r) => !isIgn(r)).forEach((r) => {
+    const seen = new Set();
+    String(r.source || "").split(/[\s,]+/).filter((p) => safeHref(p)).forEach((p) => { const s = sourceFor(hostOf(p)); if (s) seen.add(s.id); });
+    seen.forEach((id) => { uses[id] = (uses[id] || 0) + 1; });
+  });
+  $("srcEmpty").hidden = sources.length > 0;
+  $("srcEmpty").textContent = "No sources yet. Claude adds one row per cited domain.";
+  $("srcRows").replaceChildren(...sources.map((s) => {
+    const name = s.domain || s.id;
+    const curT = effTrust(s), ovT = !!s.override && s.override !== (s.trust || "");
+    const tOpts = ["trusted", "untrusted"].map((k) => { const o = el("option", { value: k, text: TLABEL[k] }); if (k === curT) o.selected = true; return o; });
+    if (curT === "") { const o = el("option", { value: "", text: TLABEL[""] }); o.selected = true; tOpts.push(o); }
+    if (ovT) tOpts.push(el("option", { value: "__reset", text: "reset to Claude's" }));
+    const tSel = el("select", { "aria-label": "Trust for " + name, disabled: db ? null : "" }, tOpts);
+    tSel.addEventListener("change", () => {
+      const v = tSel.value;
+      if (v === "__reset" || v === (s.trust || "")) return s.override ? setSourceField(s.id, { override: "" }) : render();
+      return setSourceField(s.id, { override: v });
+    });
+    const curS = effSide(s), ovS = !!s.side_override && s.side_override !== (s.side || "");
+    const sOpts = SIDES.filter(([k]) => k !== "" || curS === "").map(([k, v]) => { const o = el("option", { value: k, text: v }); if (k === curS) o.selected = true; return o; });
+    if (ovS) sOpts.push(el("option", { value: "__reset", text: "reset to Claude's" }));
+    const sSel = el("select", { "aria-label": "Side for " + name, disabled: db ? null : "" }, sOpts);
+    sSel.addEventListener("change", () => {
+      const v = sSel.value;
+      if (v === "__reset" || v === (s.side || "")) return s.side_override ? setSourceField(s.id, { side_override: "" }) : render();
+      return setSourceField(s.id, { side_override: v });
+    });
+    const tag = (on) => on ? el("span", { class: "tag", title: "Manual override of Claude's assessment", text: "manual" }) : null;
+    return el("tr", {}, [
+      el("td", { text: name }),
+      el("td", {}, [document.createTextNode(TLABEL[s.trust || ""] + " \u00b7 " + sideLabel(s.side || "")), el("small", { class: "note", text: s.reason || "" })]),
+      el("td", {}, [sSel, tag(ovS)].filter(Boolean)),
+      el("td", {}, [tSel, tag(ovT)].filter(Boolean)),
+      el("td", { class: "num", text: String(uses[s.id] || 0) }),
+    ]);
+  }));
+}
+
+let checks = [];
+// Claude's `finding` is never written by the page; `override` is the author's ("" = none).
+const CHOICES = { principle: ["violated", "ok"], law: ["violated", "ok", "unclear", "not_addressed", "n/a"], technique: ["found", "not_found", "n/a"] };
+const CLABEL = { violated: "violated", ok: "ok", "n/a": "n/a", found: "found", not_found: "not found", unclear: "unclear", not_addressed: "not addressed", "": "" };
+const effCheck = (c) => (c.kind === "principle" && c.override === "n/a" ? "" : c.override) || c.finding || "";
+// A technique flagged in the "note" tier is named but not counted (its note starts with "note:").
+const isNoteTier = (c) => c.kind === "technique" && /^note:/i.test(c.note || "");
+
+function renderChecks() {
+  const tiles = [["principle", "violated", "Principles violated"], ["technique", "found", "Techniques found"], ["law", "violated", "Rule-of-law points violated"]].map(([kind, bad, label]) => {
+    const of = checks.filter((c) => c.kind === kind && !isNoteTier(c));
+    if (kind === "law" && of.length === 0) return null;
+    return el("div", { class: "count", title: "Claude's finding / with your overrides" }, [
+      el("b", { text: of.filter((c) => c.finding === bad).length + "/" + of.filter((c) => effCheck(c) === bad).length }), el("span", { text: label })]);
+  });
+  $("chkCounts").replaceChildren(...tiles.filter(Boolean));
+  $("chkEmpty").hidden = checks.length > 0;
+  [["principle", "pRows", "pWrap", "pHead"], ["technique", "tRows", "tWrap", "tHead"], ["law", "lRows", "lWrap", "lHead"]].forEach(([kind, body, wrap, head]) => {
+    const of = checks.filter((c) => c.kind === kind);
+    $(wrap).hidden = $(head).hidden = of.length === 0;
+    $(body).replaceChildren(...of.map((c) => {
+      const cur = effCheck(c), ignoredNa = c.kind === "principle" && c.override === "n/a", ov = !!c.override && !ignoredNa && c.override !== (c.finding || "");
+      const opts = CHOICES[kind].map((k) => { const o = el("option", { value: k, text: CLABEL[k] }); if (k === cur) o.selected = true; return o; });
+      if (cur !== "" && !CHOICES[kind].includes(cur)) { const o = el("option", { value: cur, text: cur }); o.selected = true; opts.push(o); }
+      if (ov) opts.push(el("option", { value: "__reset", text: "reset to Claude's" }));
+      const sel = el("select", { "aria-label": "Result for " + (c.name || c.id), disabled: db ? null : "" }, opts);
+      sel.addEventListener("change", () => {
+        const v = sel.value;
+        if (v === "__reset" || v === (c.finding || "")) return c.override ? setCheckField(c.id, { override: "" }) : render();
+        return setCheckField(c.id, { override: v });
+      });
+      return el("tr", {}, [
+        el("td", { text: c.name || c.id }),
+        el("td", {}, [document.createTextNode(CLABEL[c.finding || ""] || c.finding || ""), el("small", { class: "note", text: c.note || "" })]),
+        el("td", {}, ov ? [sel, el("span", { class: "tag", title: "Manual override of Claude's finding", text: "manual" })] : ignoredNa ? [sel, el("span", { class: "tag", title: "The principles are always on; n/a is ignored", text: "n/a ignored" })] : [sel]),
+      ]);
+    }));
+  });
+}
+
+function renderCounts() {
+  // Each status tile shows "Claude's count / effective count" (effective = with the author's overrides).
+  const mine = Object.fromEntries(STATUSES.map((s) => [s, 0]));
+  const counts = Object.fromEntries(STATUSES.map((s) => [s, 0]));
+  const active = rows.filter((r) => !isIgn(r));
+  active.forEach((r) => {
+    if (r.status in mine) mine[r.status]++;
+    if (eff(r) in counts) counts[eff(r)]++;
+  });
+  $("counts").replaceChildren(
+    el("div", { class: "count" }, [el("b", { text: String(active.length) }), el("span", { text: "total" })]),
+    ...STATUSES.map((s) => el("div", { class: "count", title: "Claude's evaluation / with your overrides" }, [el("b", { text: mine[s] + "/" + counts[s] }), el("span", { text: LABEL[s] })])),
+    el("div", { class: "count" }, [el("b", { text: String(rows.length - active.length) }), el("span", { text: "ignored" })])
+  );
+}
+
+function renderFilters() {
+  const make = (key, label) => el("button", { type: "button", class: filter === key ? "on" : "", "data-f": key, text: label });
+  $("filters").replaceChildren(make("all", "all"), ...STATUSES.map((s) => make(s, LABEL[s])), make("ignored", "ignored"));
+}
+
+function renderRows() {
+  const shown = filter === "all" ? rows : filter === "ignored" ? rows.filter(isIgn) : rows.filter((r) => !isIgn(r) && eff(r) === filter);
+  $("empty").hidden = shown.length > 0;
+  $("empty").textContent = rows.length ? "No claims with this status." : "No claims yet. Add the first one below.";
+  $("rows").replaceChildren(...shown.map((r) => {
+    const cur = eff(r), overridden = !!r.override && r.override !== r.status;
+    const opts = STATUSES.map((s) => {
+      const o = el("option", { value: s, text: LABEL[s] }); if (s === cur) o.selected = true; return o;
+    });
+    if (overridden) opts.push(el("option", { value: "__reset", text: "reset to Claude's" }));
+    const sel = el("select", { "aria-label": "Status for " + (r.claim || r.id), disabled: db ? null : "" }, opts);
+    sel.addEventListener("change", () => setStatus(r, sel.value));
+    // `side` is Claude's; the author's choice goes to `side_override` ("" = none), as for sources.
+    const curSide = effSide(r), ovSide = !!r.side_override && r.side_override !== (r.side || "");
+    const sideOpts = SIDES.map(([k, v]) => { const o = el("option", { value: k, text: v }); if (k === curSide) o.selected = true; return o; });
+    if (ovSide) sideOpts.push(el("option", { value: "__reset", text: "reset to Claude's" }));
+    const side = el("select", { "aria-label": "Side for " + (r.claim || r.id), disabled: db ? null : "" }, sideOpts);
+    side.addEventListener("change", () => {
+      const v = side.value;
+      if (v === "__reset" || v === (r.side || "")) return r.side_override ? setField(r.id, { side_override: "" }) : render();
+      return setField(r.id, { side_override: v });
+    });
+    const ig = isIgn(r);
+    const ignBtn = el("button", { type: "button", text: ig ? "Restore" : "Ignore", disabled: db ? null : "" });
+    ignBtn.addEventListener("click", () => setField(r.id, { ignored: !ig }));
+    const src = el("td", { class: "src" }, sourceNodes(r.source));
+    return el("tr", { class: ig ? "ignored" : "" }, [
+      el("td", { class: "claim", text: r.claim || "" }),
+      el("td", { text: LABEL[r.status] || r.status || "" }),
+      el("td", {}, overridden ? [sel, el("span", { class: "tag", title: "Manual override of Claude's evaluation", text: "manual" })] : [sel]),
+      el("td", {}, ovSide ? [side, el("span", { class: "tag", title: "Your side; Claude's: " + sideLabel(r.side || ""), text: "manual" })] : [side]),
+      src,
+      el("td", { class: "num", text: r.date || "" }),
+      el("td", {}, [ignBtn]),
+    ]);
+  }));
+}
+
+function renderOpen() {
+  const open = rows.filter((r) => !isIgn(r) && eff(r) === "unverified");
+  $("open").replaceChildren(...open.map((r) => el("li", { text: (r.claim || "") + " (unverified)" })));
+  $("openEmpty").hidden = open.length > 0;
+}
+
+function renderUnapproved() {
+  $("banner").hidden = !unapproved;
+  $("unapproved").checked = unapproved;
+  $("unapproved").disabled = !db;
+}
+
+function render() { renderCounts(); renderSources(); renderChecks(); renderFilters(); renderRows(); renderOpen(); renderUnapproved(); }
+
+// On failure, re-render from the last snapshot so the control shows the saved value again.
+async function setField(id, data) {
+  if (!db) return say("Read-only: you cannot change claims here.");
+  try { await db.collection("claims").doc(id).update(data); say("Saved."); }
+  catch (e) { render(); say(e.code === "invalid_argument" ? "Not allowed: your access is read-only." : "Could not save: " + (e.message || e.code)); }
+}
+async function setCheckField(id, data) {
+  if (!db) return say("Read-only: you cannot change checks here.");
+  try { await db.collection("checks").doc(id).update(data); say("Saved."); }
+  catch (e) { render(); say(e.code === "invalid_argument" ? "Not allowed: your access is read-only." : "Could not save: " + (e.message || e.code)); }
+}
+async function setSourceField(id, data) {
+  if (!db) return say("Read-only: you cannot change sources here.");
+  try { await db.collection("sources").doc(id).update(data); say("Saved."); }
+  catch (e) { render(); say(e.code === "invalid_argument" ? "Not allowed: your access is read-only." : "Could not save: " + (e.message || e.code)); }
+}
+// Writes only `override`, never `status`. Picking Claude's own value (or the reset option) clears it.
+function setStatus(r, value) {
+  if (value === "__reset" || value === r.status) {
+    if (r.override) return setField(r.id, { override: "" });
+    return render();
+  }
+  return setField(r.id, { override: value });
+}
+
+async function setUnapproved(value) {
+  if (!db) return;
+  try { await db.collection("meta").doc("ledger").set({ ...metaLedger, unapproved: value }); say(value ? "Marked unapproved." : "Marked approved."); }
+  catch (e) { render(); say("Could not save: " + (e.message || e.code)); }
+}
+
+$("filters").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-f]"); if (!b) return;
+  filter = b.dataset.f; render();
+});
+
+$("unapproved").addEventListener("change", (e) => setUnapproved(e.target.checked));
+
+$("addForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const f = new FormData(e.target);
+  const claim = String(f.get("claim") || "").trim();
+  if (!claim) return;
+  if (!db) return say("Read-only: you cannot add claims here.");
+  try {
+    await db.collection("claims").add({
+      // The author's row: their status and side are overrides; Claude's fields start empty until it checks the claim.
+      claim, status: "unverified", override: String(f.get("status")), side: "", side_override: String(f.get("side") || ""),
+      source: String(f.get("source") || "").trim(), date: String(f.get("date") || ""),
+      created: new Date().toISOString(),
+    });
+    e.target.reset(); say("Added.");
+  } catch (err) { say(err.code === "quota_exceeded" ? "The ledger is full." : "Could not add: " + (err.message || err.code)); }
+});
+
+(async () => {
+  render();
+  try { db = window.claude ? await window.claude.use("db") : null; } catch (e) { db = null; }
+  if (!db) { $("addForm").hidden = true; say("Read-only view. Open this page in Claude to edit."); render(); return; }
+  db.collection("claims").orderBy("created", "desc").onSnapshot(
+    (snap) => { rows = snap.docs.filter((d) => d.exists).map((d) => ({ id: d.id, ...d.data() })); render(); },
+    (err) => say("Live updates stopped: " + (err.message || err.code))
+  );
+  db.collection("sources").orderBy("domain").onSnapshot(
+    (snap) => { sources = snap.docs.filter((d) => d.exists).map((d) => ({ id: d.id, ...d.data() })); render(); },
+    (err) => say("Live updates stopped: " + (err.message || err.code))
+  );
+  db.collection("checks").onSnapshot(
+    (snap) => { checks = snap.docs.filter((d) => d.exists).map((d) => ({ id: d.id, ...d.data() })).sort((a, b) => a.id.localeCompare(b.id)); render(); },
+    (err) => say("Live updates stopped: " + (err.message || err.code))
+  );
+  db.collection("meta").doc("ledger").onSnapshot(
+    (snap) => { metaLedger = (snap.exists && snap.data()) || {}; unapproved = metaLedger.unapproved === true; renderUnapproved(); },
+    (err) => say("Live updates stopped: " + (err.message || err.code))
+  );
+})();
+</script>
