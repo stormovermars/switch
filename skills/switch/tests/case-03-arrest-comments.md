@@ -1,7 +1,5 @@
 # Case 03: arrest comments, both directions (invented, 2026-10)
 
-Edition: free.
-
 Toggles: none.
 
 Invented test text, no real person or case. Country of the proceeding is not stated. Goal: debate quality.
@@ -25,4 +23,4 @@ Pass if all hold:
 5. The jurists' statement "A jogállami büntető igazságszolgáltatás tíz pontja" is offered as a reference, as a source and not a standard, with both locators; its claims about specific cases are checked like any other claim, with both sides' sources.
 6. No side taken: the same measure applies to both authors and to a suspect of any political side; the skill does not judge the suspect's guilt or the detention's lawfulness without the decision.
 7. A rewrite keeps each author's voice and conclusion, uses "suspect" instead of "criminal", marks opinion as opinion, and puts no words in anyone's mouth.
-8. No international instrument is cited anywhere in the output: no convention, covenant, EU directive, UN rule or Council of Europe recommendation, by name or number. At most the skill says a Pro edition maps the points to instruments.
+8. No international instrument is cited anywhere in the output: no convention, covenant, EU directive, UN rule or Council of Europe recommendation, by name or number. At most the skill says this version does not map the points to instruments.

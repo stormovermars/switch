@@ -5,7 +5,7 @@ Maintainer documentation for the switch repository. The agent rules stay self-co
 | File | What it holds |
 |---|---|
 | [principles.md](principles.md) | Build principles that apply to this repository |
-| [split.md](split.md) | What is public and what is private, and how features are switched |
+| [split.md](split.md) | How features are switched (lenses and toggle rules) |
 | [sources.md](sources.md) | The manifesto, the jurists' statement, licences (matches `NOTICE`) |
 | [testing.md](testing.md) | Corpus, isolated runs, grading, the 2-of-3 gate, budget |
 | [release.md](release.md) | Versions, manifests, push and history rules |

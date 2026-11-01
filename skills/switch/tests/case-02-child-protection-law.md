@@ -1,7 +1,5 @@
 # Case 02: Hungarian child protection law amendment (2026-10)
 
-Edition: both.
-
 Toggles: none (the follow-up turns do not switch lenses).
 
 Source session: 2026-10-18. Author writes from the Fidesz–KDNP side (opposition since May 2026). Goal: debate quality.

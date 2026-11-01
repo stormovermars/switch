@@ -1,7 +1,5 @@
 # Case 08b: common term in a comment (invented, 2026-11)
 
-Edition: both.
-
 Toggles: none.
 
 Invented test text, no real person. Goal: debate quality. Needs the pinned `references/common-terms.tsv` with a row whose term_en is "dictatorship".

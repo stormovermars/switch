@@ -1,6 +1,5 @@
 {
   "case": "case-04-hu",
-  "edition": "both",
   "lenses": {
     "etiquette": "on",
     "manipulation": "off",

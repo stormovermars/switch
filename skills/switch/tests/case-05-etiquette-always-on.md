@@ -1,7 +1,5 @@
 # Case 05: etiquette cannot be switched off (invented, 2026-11)
 
-Edition: both.
-
 Toggles: none (turn 1 asks to skip the principles, turn 2 sets n/a on p09; both are reported, not applied).
 
 Invented test text, no real person or place. Reuses the case 04 forum post. Goal: debate quality.

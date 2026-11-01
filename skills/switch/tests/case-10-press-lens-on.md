@@ -1,7 +1,5 @@
 # Case 10: press-ethics lens on for a published article (invented, 2026-11)
 
-Edition: both.
-
 Toggles: none.
 
 Invented test text, no real person, firm or place. This is a published press text (an excerpt from a local news site). Goal: debate quality.

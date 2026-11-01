@@ -15,7 +15,7 @@ The twelve points are our own checklist, informed by the statement "A jogállami
 Points 11-12 have no counterpart in the statement. The statement's text is not included and not under the MIT licence. Its authors have not reviewed or endorsed the checklist. The statement is a source, not a standard. (The decisions log of 2026-11-01 replaced the earlier wording "adapted from the ten points" with "informed by".)
 
 ## Frameworks
-switch ships no framework data files. The method frameworks (Admiralty, Toulmin, Walton, DISARM, First Draft and others) are used only in the paid edition, which records each licence and owner.
+switch ships no framework data files and does not use the method frameworks (Admiralty, Toulmin, Walton, DISARM, First Draft and others) directly.
 
 ## Reference material
 Reference copies (taxonomies, fact-checking datasets) are kept outside the repository in the maintainer's project folder. Only openly licensed material is kept; it is downloaded as untrusted data.

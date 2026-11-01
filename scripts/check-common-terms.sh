@@ -25,13 +25,13 @@ else
 fi
 rec=$(sed -n 's/^sha256 //p' "$VER")
 [ "$have" = "$rec" ] || fail "sha256 in VERSION does not match the file"
-grep -qx "pack free" "$VER" || fail "VERSION does not name the free pack (the paid core pack must not ship)"
+grep -qx "pack free" "$VER" || fail "VERSION does not name the free pack"
 
 rows=$(($(wc -l < "$TSV") - 1))
 MIN_ROWS=${COMMON_TERMS_MIN_ROWS:-1}   # free pack is small
 [ "$rows" -ge "$MIN_ROWS" ] || fail "only $rows data rows (need at least $MIN_ROWS)"
 
-[ ! -f "$REF/pro-index.tsv" ] || fail "pro-index.tsv must not ship (no upsell in the free edition)"
+[ ! -f "$REF/pro-index.tsv" ] || fail "pro-index.tsv must not ship"
 
 if [ -f "$SRC/packs/free/dist/common-terms.tsv" ]; then
   if ! cmp -s "$SRC/packs/free/dist/common-terms.tsv" "$TSV"; then

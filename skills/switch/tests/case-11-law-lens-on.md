@@ -1,7 +1,5 @@
 # Case 11: law lens on when the argument rests on a law (invented, 2026-11)
 
-Edition: both.
-
 Toggles: none.
 
 Invented test text, no real person, place or statute; the country is not stated and the law is fictional. A tenants' forum post, not a press text. Goal: debate quality.

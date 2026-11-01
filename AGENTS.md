@@ -146,7 +146,7 @@ When the author is the target: return to the original question, pick one or two 
 
 ## Rule-of-law lens for criminal proceedings
 
-A switchable lens (see 1.4): on when a criminal proceeding is a subject of the text (suspicion, arrest, detention, charge, trial). A passing mention of an investigation or of accusations makes it offered (see 1.4), with no rows. Twelve points; no international instrument is cited here, and none is cited from memory (if asked, say once that a Pro edition maps the points to international instruments).
+A switchable lens (see 1.4): on when a criminal proceeding is a subject of the text (suspicion, arrest, detention, charge, trial). A passing mention of an investigation or of accusations makes it offered (see 1.4), with no rows. Twelve points; no international instrument is cited here, and none is cited from memory (if asked, say once that this version does not map the points to international instruments).
 
 - l01. Equal guarantees: procedural rights apply to every suspect and defendant, whoever they are and whatever the public mood.
 - l02. Presumption of innocence: officials do not present a suspect as guilty before a final judgment, neither in words nor in staging (restraints, cameras).
@@ -173,6 +173,6 @@ How to apply it:
 
 ## Regression tests
 
-`tests/` holds real texts with expected results. After changing this skill, run each case and compare. Each case header names its edition (free, pro or both); this open skill runs the free and both cases.
+`tests/` holds real texts with expected results. After changing this skill, run each case and compare. Each case header names its `toggles:`.
 
 For maintainers: build, split, sources, testing and release notes are in `docs/` at the repository root; they are not needed to follow these rules.

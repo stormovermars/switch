@@ -1,6 +1,6 @@
 #!/bin/sh
 # Refresh the pinned common-terms copy used by the skill. Idempotent.
-# Ships only the free pack (public); never the paid core pack and no pro-index (no upsell in the free report).
+# Ships only the free pack (public).
 # Source: $COMMON_TERMS_DIR (default: ../common-terms next to this repo).
 set -eu
 ROOT=$(cd "$(dirname "$0")/.." && pwd)

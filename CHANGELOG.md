@@ -11,9 +11,9 @@ The GitHub repository holds one squashed commit; the history of changes is kept 
 - Reports and rewrites end with a "Self-check" line and an "Author's choices" line (ignored claims, n/a rows, overrides, trust and side overrides per camp, approval); the rewrite adds a "What changed and why" list and offers an optional note for readers.
 - Ledger: claims get `side_override`; author-added claims keep the author's status in `override`. Drafts get the same checks rows and report.
 - Known limitation (symmetry, case 09a/09b, 3 runs per variant, 46 check rows each): 1, 1 and 3 rows differed between the variants per run; which rows differed and which variant was flagged changed from run to run (p08 3 of 3 runs, flagged twice in a and once in b; l06 2 of 3, once each way; p07 and m18 once each, in b). This is run variance on borderline wording ("Why bother with a trial?"), not one side flagged consistently; every graded expectation passed in all six runs.
-- Common terms: both sides with the same structure and length under neutral labels; the Pro upgrade line and pro-index are removed from the free edition.
+- Common terms: both sides with the same structure and length under neutral labels.
 - English only (skill and docs); Hungarian test inputs stay (03-hu, 04-hu); valts is archived.
-- common-terms: the term map cites a pinned copy of the common-terms free pack (`skills/switch/references/`, 29 terms); `scripts/sync-common-terms.sh` ships only the free pack (no pro-index), `scripts/check-common-terms.sh` verifies it; capture of new terms is opt-in (`COMMON_TERMS_DIR`); case 08b (data case); the absent-copy case is pending.
+- common-terms: the term map cites a pinned copy of the common-terms free pack (`skills/switch/references/`, 29 terms); `scripts/sync-common-terms.sh` ships only the public pack, `scripts/check-common-terms.sh` verifies it; capture of new terms is opt-in (`COMMON_TERMS_DIR`); case 08b (data case); the absent-copy case is pending.
 - Rule-of-law lens: a passing mention makes it offered with no rows; each l-row judges the text's own stance, not the proceeding; findings violated / ok / unclear / not_addressed everywhere (page included).
 - Ledger values stored as keys (partly_true, camp_a…); fixed `lenses` string with etiquette always on; several authors share one row per check with the source named in the note; rows of a lens switched off stay but are not reported.
 - Etiquette defined as the twelve principles plus the self-check; the self-check uses the technique list even with the manipulation lens off; no instrument citations from memory.
@@ -21,12 +21,12 @@ The GitHub repository holds one squashed commit; the history of changes is kept 
 ## 1.9.0 – 2026-11-01 – twelve public fairness points, lens toggles
 
 - Law lens: on when the argument rests on what a law requires, offered for a legal claim made in passing. A fully-on rule-of-law lens writes a row for every point l01–l12.
-- Rule-of-law lens: twelve public points (l01–l12) without instrument citations; informed by the jurists' statement (both locators, access date), 11–12 our additions; the statement stays a source, not a standard. `checks` rows l01–l12 (`kind` law) while the lens is on; ledger page shows them again. The instrument mapping moved to the Pro edition.
+- Rule-of-law lens: twelve public points (l01–l12) without instrument citations; informed by the jurists' statement (both locators, access date), 11–12 our additions; the statement stays a source, not a standard. `checks` rows l01–l12 (`kind` law) while the lens is on; ledger page shows them again.
 - Toggles: etiquette (the twelve principles) always on, not switchable as a lens or per row (an author's "n/a" on a principle row is reported, not applied; the ledger page ignores it); the manipulation checklist is its own switchable lens (default on for contentious texts); rule-of-law, press ethics and law stay switchable. The lens line lists etiquette as "always on".
 - Press-ethics lens: "the presumption binds the authority, accuracy binds the press".
 - Principles 1–10: "adapted (reworded) from" the manifesto, with its URL in SKILL.md / AGENTS.md.
 - LICENSE (MIT) and NOTICE (third-party texts) added.
-- Tests: case 03 re-keyed to l01–l12, case 04 updated, new cases 05 (etiquette always on), 06 (lens off by author), 07 (free run, no instrument citations); each case marked free, pro or both.
+- Tests: case 03 re-keyed to l01–l12, case 04 updated, new cases 05 (etiquette always on), 06 (lens off by author), 07 (free run, no instrument citations).
 - Version: 1.9.0 in every manifest.
 - Wording pass: the twelve points use our own wording without case-specific examples; they are "informed by" the jurists' statement (not adapted or condensed from it); NOTICE states that our wording is MIT and that the manifesto and the statement texts are not included and not MIT.
 

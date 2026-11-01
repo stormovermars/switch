@@ -1,7 +1,5 @@
 # Case 04-hu: lenses switched by topic (invented, 2026-10), Hungarian input (parity with case 04)
 
-Edition: both.
-
 Toggles: manipulation off (turn 1).
 
 Invented test text, no real person or place. A neighbourhood forum post, not a press text. Goal: debate quality.

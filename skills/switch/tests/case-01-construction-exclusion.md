@@ -1,7 +1,5 @@
 # Case 01: Hungarian construction firms excluded (2026-10)
 
-Edition: both.
-
 Toggles: none.
 
 Source session: 2026-10-18. Author writes from the Fidesz side (opposition since May 2026). Goal: debate quality.

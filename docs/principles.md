@@ -2,11 +2,11 @@
 
 Principles that govern how this repository is built and kept. The rules the skill follows when it reviews a text are in `SKILL.md` and `AGENTS.md`; they are the authority and are not repeated here.
 
-## Licence and editions
-1. **Open core, one source.** The public edition is MIT. A paid tier exists, but it is built from the same source and never hand-forked. For switch the free edition is `git archive HEAD`; the paid tier is a separate, private build.
-2. **Rules are free; data, and verdicts checked against data, are paid** (paid depth never changes a free result). The etiquette rules, the manipulation checklist, the twelve fairness points, stage separation and the ledger are free. The instrument mapping, national-law data, press codes and the evidence lake are paid.
-3. **What was published as MIT stays free.** Nothing already published is moved to the paid tier. New paid wording exists only in private.
-4. **The points are free, the instrument mapping is paid.** The twelve fairness points are our own wording; mapping them to international instruments is the paid part.
+## Licence
+1. **Open source, one source.** The public edition is MIT, built with `git archive HEAD`.
+2. **Rules first.** The etiquette rules, the manipulation checklist, the twelve fairness points, stage separation and the ledger are all here; switch ships no national-law, press-code or instrument data.
+3. **What was published as MIT stays free.** Nothing already published is withdrawn.
+4. **The points are our own wording.** The twelve fairness points are not mapped to international instruments in this repository.
 5. **Third-party texts are not included.** The manifesto and the jurists' statement are sources, credited and linked; their text is not in the repository and is not under our licence (see [sources.md](sources.md)).
 
 ## Authorship and operation

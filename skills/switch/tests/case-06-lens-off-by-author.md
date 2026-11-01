@@ -1,7 +1,5 @@
 # Case 06: each switchable lens, switched off, is not reported (invented, 2026-11)
 
-Edition: both.
-
 Toggles: rule-of-law off (turn 1); manipulation off (turn 2); press and law off (turn 3).
 
 Invented test texts, no real person or case. Goal: debate quality.
