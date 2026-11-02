@@ -22,6 +22,7 @@
   "etiquette_always_on": true,
   "judge_items": [
     "Rewrite keeps the author's order, topics and conclusion and puts no words in the author's mouth.",
-    "'Hanyat' is read as 'hányat' (a question), not as a company name."
+    "'Hanyat' is read as 'hányat' (a question), not as a company name.",
+    "Each finding is named with its quote and explained in at most two plain sentences, and one offer line ('Explain any of these with references') follows the findings."
   ]
 }

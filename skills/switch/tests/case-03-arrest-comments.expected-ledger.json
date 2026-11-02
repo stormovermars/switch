@@ -25,6 +25,7 @@
   "forbidden_terms_file": "denylist",
   "judge_items": [
     "The pretextual-revenge claims are treated as unverified, not as false, because the decision was not seen.",
-    "The rewrite uses 'suspect' instead of 'criminal' and puts no words in anyone's mouth."
+    "The rewrite uses 'suspect' instead of 'criminal' and puts no words in anyone's mouth.",
+    "Each finding is named with its quote and explained in at most two plain sentences, and one offer line ('Explain any of these with references') follows the findings."
   ]
 }
