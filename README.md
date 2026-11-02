@@ -46,4 +46,4 @@ Command: `/switch` followed by the text.
 
 The skill looks at the tone and reasoning of a text, not at people. Manipulation detection is not certain: the skill flags its uncertainty, and the final decision is yours.
 
-The skill and its docs are in English; it replies in the author's language. Capture of new terms is opt-in: only when `COMMON_TERMS_DIR` is set does the skill send the new terms, with a short excerpt and the source of the text, to a local script; by default nothing is written.
+The skill and its docs are in English; it replies in the author's language.
