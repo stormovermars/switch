@@ -12,5 +12,6 @@
   "judge_items": [
     "No common-terms id, or pinned-index entry is cited; the term-map row for the leader label is built by the general rule.",
     "The label is either tied to concrete measures or marked as the author's opinion; the generalization about supporters is flagged."
-  ]
+  ],
+  "common_terms_ids_absent": true
 }

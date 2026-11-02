@@ -2,6 +2,11 @@
 
 The GitHub repository holds one squashed commit; the history of changes is kept here.
 
+## Unreleased
+
+- Common terms: the term-map row now names the columns it uses (in_short, each `sides` view with who holds it, the `good` and `bad` lines with their sources) instead of "those who use / reject the term"; criteria and the misuse line guide the judgement; only references marked [opened] go into the Sources list, [snippet] and [unconfirmed] ones are leads to check.
+- Tests: case 08b grades the term-map id mechanically; the absent-copy case states its id check.
+
 ## 1.10.0 – 2026-11-01 – persuasion through judgement, tiered flags, disclosure lines
 
 - Review fixes: tiers cover every flag (violation includes human-rights breaches); note-tier flags are not counted on the page; our own text may use a technique only as a note; drafting mode skips 5.1/5.10 and ends with 7.6; closing lines once per reply, principles only while the manipulation lens is off; author-added rows reported apart from overrides.
