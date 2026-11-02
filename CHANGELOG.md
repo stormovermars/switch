@@ -7,7 +7,7 @@ The GitHub repository holds one squashed commit; the history of changes is kept 
 - Report pattern for every finding: name it with its quote, explain it in one or two plain sentences, then one offer line for references; on yes, a short explanation with named sources and public links.
 - Capture of new terms removed (withdrawn).
 - Common terms: the term-map row now names the columns it uses (in_short, each `sides` view with who holds it, the `good` and `bad` lines with their sources) instead of "those who use / reject the term"; criteria and the misuse line guide the judgement; only references marked [opened] go into the Sources list, [snippet] and [unconfirmed] ones are leads to check.
-- Tests: case 08b grades the term-map id mechanically; the absent-copy case states its id check.
+- Tests: case 08 (copy absent) leaves pending after two agreeing runs; its `Without:` header removes the copy from the edition. Case 08b grades the term-map id mechanically; the absent-copy case states its id check.
 
 ## 1.10.0 – 2026-11-01 – persuasion through judgement, tiered flags, disclosure lines
 

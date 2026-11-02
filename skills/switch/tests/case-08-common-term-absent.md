@@ -2,9 +2,9 @@
 
 Toggles: none.
 
-Status: pending. The free pack now ships, so this case needs a run with `references/common-terms.tsv` removed from the edition; it is not run by default.
+Without: skills/switch/references/common-terms.tsv
 
-Invented test text, no real person. Goal: debate quality. Runs with no `references/common-terms.tsv` in the skill folder (the shipped state while the free pack is empty).
+Invented test text, no real person. Goal: debate quality.
 
 ## Input
 
