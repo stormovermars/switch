@@ -187,7 +187,7 @@
    "meaning_hu": "Mindenki szabadon vallhat véleményt, és közölhet vagy kaphat információt és gondolatot hatósági beavatkozás nélkül.",
    "holder": "Every person",
    "binds": "Primarily the state; private platforms and employers are bound by it only through law and contract",
-   "limits": "Limits must be set by law, pursue a legitimate aim (e.g. others' reputation, public order, protection of minors) and be necessary in a democratic society; incitement to violence, threats and unlawful harassment are not protected",
+   "limits": "Limits must be set by law, pursue a legitimate aim (e.g. others' reputation, public order, protection of minors) and be necessary and proportionate to that aim; incitement to violence, threats and unlawful harassment are not protected",
    "balanced_with": [
     "r01",
     "r10",
@@ -306,7 +306,7 @@
    "meaning_hu": "Mindenki magán- és családi élete, otthona, levelezése és személyes adatai védettek a jogellenes vagy önkényes beavatkozástól.",
    "holder": "Every person",
    "binds": "The state; private bodies through data-protection law",
-   "limits": "Interference is lawful if set by law, necessary and proportionate; public figures have a narrower private sphere in matters of public interest",
+   "limits": "Interference is lawful if set by law, necessary and proportionate; the private sphere of public figures is narrower where the matter is of public interest",
    "balanced_with": [
     "r07",
     "r08",
@@ -365,7 +365,7 @@
    "meaning_hu": "A szülőké a gyermek nevelésének elsődleges felelőssége, az államnak pedig az oktatásban tiszteletben kell tartania vallási és világnézeti meggyőződésüket.",
    "holder": "Parents and legal guardians",
    "binds": "The state in its educational functions",
-   "limits": "State schooling may convey information in an objective, critical and pluralistic way, including age-appropriate sex education, without this violating parents' convictions; it may not indoctrinate; the child's best interests prevail where they conflict",
+   "limits": "The state sets curricula by law; parents' convictions are respected within the limits courts have drawn; a specific curriculum dispute is judged case by case under the jurisdiction rule",
    "balanced_with": [
     "r12",
     "r14",
@@ -457,12 +457,12 @@
     "Read as meaning a member may be silenced for an opinion disliked by the majority",
     "Applied to members of one party while the other side's members are held to a different standard"
    ],
-   "source_name": "Treaty on European Union",
-   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12016M/TXT",
-   "source_accessed": "2026-11-01",
-   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12016M/TXT",
-   "url_hu_accessed": "2026-11-01",
-   "scope": "both",
+   "source_name": "The national constitution",
+   "source_url": "",
+   "source_accessed": "",
+   "url_hu": "",
+   "url_hu_accessed": "",
+   "scope": "national",
    "same_as": []
   },
   {
@@ -642,7 +642,7 @@
    "meaning_hu": "A nemzeti és más kisebbségekhez tartozók mindenki mással azonos jogokat élveznek, és megőrizhetik és fejleszthetik kultúrájukat, nyelvüket és vallásukat.",
    "holder": "Persons belonging to minorities (individually and with others)",
    "binds": "The state",
-   "limits": "Rights are exercised within the law and do not permit acts against the state's territorial integrity or others' rights",
+   "limits": "Rights are exercised within the law and with respect for others' rights",
    "balanced_with": [
     "r02",
     "r09",
@@ -1136,7 +1136,7 @@
   },
   {
    "id": "m24",
-   "explain": "Delegitimizing an opinion presents a lawful view, or the person holding it, as illegitimate, evil, or not entitled to be voiced, in place of an argument. It matters because the view is removed from discussion without being answered.",
+   "explain": "Delegitimizing an opinion presents a view, or the person holding it, as not entitled to be voiced (illegitimate, evil, to be silenced), with no finding by a court, or by a body with legal power to decide it, cited; a cited finding is itself a claim to check. It is offered in place of an argument. It matters because the view is removed from discussion without being answered.",
    "legit_form": "Arguing that a view is wrong, or pointing to a specific unlawful act.",
    "how_to_respond_fairly": "Ask for the argument against the view itself.",
    "refs_free": [
@@ -1628,10 +1628,10 @@
    ],
    "not_this": "A genuine conflict between two rights, argued with both named; a strongly argued position that uses the term in its established sense; a quoted opponent's use of the term.",
    "routing": {
-    "attributed_motive": "the text says why someone invokes the right (motive, no contradiction of the term)",
-    "generalization": "the misreading is pinned on a whole group",
-    "character_assassination": "the person's credibility, not the term, is attacked",
-    "one_sided_balancing": "only one of two paired rights is named and nothing contradicts the term: report as unclear, not misuse"
+    "attributed-motive": "the text says why someone invokes the right (motive, no contradiction of the term)",
+    "hasty-generalization": "the misreading is pinned on a whole group",
+    "Questioning_the_Reputation": "the person's credibility, not the term, is attacked",
+    "one-sided balancing": "not a technique: only one of two paired rights is named and nothing contradicts the term, so it is a glossary note"
    },
    "refs_free": [
     {
@@ -1645,18 +1645,19 @@
    "id": "m24",
    "name": "Delegitimizing an opinion",
    "name_hu": "Vélemény delegitimálása",
-   "definition": "A view, or its holder (a member of parliament, a parent, a journalist), is presented as not entitled to be voiced (illegitimate, evil, to be silenced), and the text cites no court or authority finding for that. The finding is about the wording, not about anyone's purpose.",
+   "definition": "A view, or its holder (any person or group), is presented as not entitled to be voiced (illegitimate, evil, to be silenced), with no finding by a court, or by a body with legal power to decide it, cited; a cited finding is itself a claim to check. The finding is about the wording, not about anyone's purpose.",
    "detectors": [
     "The text says a view must not be said, or that its holder has no right to say it, without arguing against the view",
-    "The view itself, rather than a named unlawful act, is called evil, dangerous or illegitimate, with no court or authority finding cited",
+    "The view is called evil or illegitimate AND its holder is said to have no right to voice it, or should be silenced or excluded",
     "A group is told to be silent because of what it believes (applies equally to every political side and to any group)",
     "A person's standing to speak (office, role, parenthood) is denied because of the opinion"
    ],
-   "not_this": "Moral condemnation that leaves the right to speak intact; a lawful limit a court has found; calls for political accountability; satire; criticism of an official's use of office; arguing that a view is wrong with reasons; a rule of procedure that really limits who may speak at a given moment.",
+   "not_this": "Moral condemnation that leaves the right to speak intact; a limit on speech that a court has found; calls for political accountability; satire; criticism of an official's use of office; arguing that a view is wrong with reasons; a rule of procedure that really limits who may speak at a given moment.",
    "routing": {
-    "attributed_motive": "the text claims to know why someone holds the view (m15)",
-    "generalization": "all holders of the view are said to share it or the fault (m16)",
-    "character_assassination": "the person's credibility, not the standing of the view, is attacked (m04)"
+    "attributed-motive": "the text claims to know why someone holds the view (m15)",
+    "hasty-generalization": "all holders of the view are said to share it or the fault (m16)",
+    "Name_Calling-Labeling": "the label is the whole act, with no claim that the view may not be voiced (m17 nearest in switch)",
+    "Questioning_the_Reputation": "the person's credibility, not the standing of the view, is the target (m04)"
    },
    "refs_free": [
     {

@@ -24,7 +24,7 @@ Tests are regression cases with expected results.
 - Code checks: JSON and JS manifests parse; a citation denylist grep over the free text finds no instrument citations.
 
 ## Free-text guard
-- `scripts/check-free-text.sh` greps the skill, `references.json`, README, NOTICE, CHANGELOG and docs for named international instruments, article and section numbers (an "Art." or "Article" or section sign followed by a digit) and private wording, parses the manifests and checks that `SKILL.md` repeats `AGENTS.md`. Run it before any release and after any change to the free text.
+- `scripts/check-free-text.sh` greps every tracked file, case-insensitively, for named international instruments and article, paragraph and section numbers (for example "Art", "Article", "Para.", "Protocol No." or a section sign next to a digit, Hungarian "cikk" and "bekezdés"), except an explicit exemption list kept in the script with a reason for each entry; it adds private patterns only when `DENYLIST` names a file (blank and comment lines ignored), parses the manifests and checks that `SKILL.md` repeats `AGENTS.md`. Run it before any release and after any change to the free text.
 
 ## common-terms
 - `skills/switch/references/common-terms.tsv` is a pinned copy of the common-terms public pack (`packs/free`); `common-terms.VERSION` holds `pack free`, the source commit and sha256. Generated, never edited by hand.
