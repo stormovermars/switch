@@ -4,7 +4,7 @@ A plugin for contentious texts: comments, replies, articles, posts, letters and 
 
 Command: `/switch` followed by the text.
 
-- **Lenses by topic:** the twelve principles are always on and are not a lens. The lenses are the manipulation checklist (22 techniques), a rule-of-law standard (twelve fairness points, l01–l12), press ethics and law; each is on, offered or off by topic, and you can switch it on or off.
+- **Lenses by topic:** the twelve principles are always on and are not a lens. The lenses are the manipulation checklist (24 techniques, including rights-term misuse and delegitimizing an opinion), a rule-of-law standard (twelve fairness points, l01–l12), press ethics and law; each is on, offered or off by topic, and you can switch it on or off. A "rights" switch adds a glossary of 24 rights and principles (`skills/switch/references/references.json`), read only when the text argues from a right.
 - **Tiered flags:** note, caution or violation, judged by observable signs and context, never by intent.
 - **Claim ledger:** each claim gets a status and a side, each source a side and a trust rating with the reason, and each check a finding. Your overrides are stored next to the skill's own ratings, not in place of them.
 - **Term map:** the words each camp uses, backed by a pinned copy of the common-terms index (29 very common political terms, each with both sides).

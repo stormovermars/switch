@@ -23,6 +23,9 @@ Tests are regression cases with expected results.
 - Budget: one run per case. Runs 2 and 3 only for fails or borderline results. One combined pass per batch of merged work.
 - Code checks: JSON and JS manifests parse; a citation denylist grep over the free text finds no instrument citations.
 
+## Free-text guard
+- `scripts/check-free-text.sh` greps the skill, `references.json`, README, NOTICE, CHANGELOG and docs for named international instruments, article and section numbers (an "Art." or "Article" or section sign followed by a digit) and private wording, parses the manifests and checks that `SKILL.md` repeats `AGENTS.md`. Run it before any release and after any change to the free text.
+
 ## common-terms
 - `skills/switch/references/common-terms.tsv` is a pinned copy of the common-terms public pack (`packs/free`); `common-terms.VERSION` holds `pack free`, the source commit and sha256. Generated, never edited by hand.
 - Refresh: `scripts/sync-common-terms.sh` (reads `$COMMON_TERMS_DIR`, default `../common-terms`; prints "ok unchanged", "ok updated" or "skip" when the free pack is empty).

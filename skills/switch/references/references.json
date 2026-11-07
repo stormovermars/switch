@@ -1,0 +1,1670 @@
+{
+ "about": "Shared reference data for the switch skill, read on demand: only when the rights switch is on or offered, or when the author says yes to the offer of references. Own wording; sources are named with public links, never quoted at length. A card is a reference, not a verdict.",
+ "glossary": [
+  {
+   "id": "r01",
+   "term": "Human dignity",
+   "term_hu": "Emberi méltóság",
+   "meaning": "Every person has the same inherent worth, which no law, authority or private party may violate.",
+   "meaning_hu": "Minden embernek ugyanaz a veleszületett értéke, amelyet sem törvény, sem hatóság, sem magánszemély nem sérthet meg.",
+   "holder": "Every human being",
+   "binds": "The state and EU institutions; private persons through the laws that protect it",
+   "limits": "Not subject to weighing away: other rights may be limited, the core of dignity may not; it is no licence to restrict lawful conduct only because someone finds it offensive",
+   "balanced_with": [
+    "r02",
+    "r07",
+    "r22"
+   ],
+   "common_misreadings": [
+    "Used as an absolute trump to silence any view a speaker finds offensive",
+    "Treated as optional for people of a disliked group or opinion",
+    "Equated with a feeling of being insulted rather than with the worth of the person"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": [
+    "p09",
+    "l08"
+   ]
+  },
+  {
+   "id": "r02",
+   "term": "Equality before the law and non-discrimination",
+   "term_hu": "Törvény előtti egyenlőség és megkülönböztetés tilalma",
+   "meaning": "Everyone is treated alike by the law, and differences in treatment need an objective, proportionate reason.",
+   "meaning_hu": "A törvény mindenkire egyformán vonatkozik, a különbségtételhez objektív és arányos indok kell.",
+   "holder": "Every person",
+   "binds": "The state and EU institutions; employers and service providers under equality statutes",
+   "limits": "Differences in treatment are lawful where justified by a legitimate aim and proportionate; positive measures to remedy disadvantage can be lawful",
+   "balanced_with": [
+    "r01",
+    "r07",
+    "r09",
+    "r10"
+   ],
+   "common_misreadings": [
+    "Read as requiring identical treatment even where situations differ in a relevant way",
+    "Read as allowing unequal treatment of a group because its members share a view",
+    "Invoked for one group only while the same claim by another group is dismissed"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": [
+    "l01",
+    "l12"
+   ]
+  },
+  {
+   "id": "r03",
+   "term": "Presumption of innocence",
+   "term_hu": "Ártatlanság vélelme",
+   "meaning": "A person charged with a crime is treated as innocent until guilt is established by a court under law.",
+   "meaning_hu": "A bűncselekménnyel vádolt személyt mindaddig ártatlannak kell tekinteni, amíg bíróság a törvény szerint nem állapítja meg a bűnösségét.",
+   "holder": "Every suspect and accused person",
+   "binds": "Courts, prosecutors and public authorities in how they speak and act; the press and private persons are bound by ethics and defamation law, not by this rule as such",
+   "limits": "Does not forbid reporting that a charge exists or discussing a case; it forbids officials presenting the person as guilty before judgment",
+   "balanced_with": [
+    "r07",
+    "r08",
+    "r04"
+   ],
+   "common_misreadings": [
+    "Read as banning the press from reporting a suspicion or charge",
+    "Read as proof that the accused did nothing, rather than a rule about treatment and burden of proof",
+    "Ignored when an authority or a crowd treats a suspect as already guilty"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": [
+    "l02"
+   ]
+  },
+  {
+   "id": "r04",
+   "term": "Fair trial and right of defence",
+   "term_hu": "Tisztességes eljárás és védelemhez való jog",
+   "meaning": "Anyone facing a charge or a civil claim gets a hearing by an independent court, with time, information and a lawyer to defend themselves.",
+   "meaning_hu": "Aki ellen vádat vagy polgári igényt emelnek, azt független bíróság hallgatja meg, és van ideje, tájékoztatása és védője a védekezéshez.",
+   "holder": "Every person charged or party to a case",
+   "binds": "Courts, prosecutors, police and the state",
+   "limits": "Some elements, such as public hearing or access to the file, can be limited for defined reasons if the whole procedure stays fair",
+   "balanced_with": [
+    "r03",
+    "r05",
+    "r19",
+    "r20"
+   ],
+   "common_misreadings": [
+    "Seen as a technicality that protects only the guilty",
+    "Claimed as violated simply because the outcome was unwelcome",
+    "Reduced to the right to a lawyer while ignoring timely information and equal treatment of the parties"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": [
+    "l11",
+    "l09"
+   ]
+  },
+  {
+   "id": "r05",
+   "term": "No punishment without law",
+   "term_hu": "Nullum crimen, nulla poena sine lege",
+   "meaning": "No one is punished for something that was not a crime when it was done, and the penalty may not be heavier than the one then set.",
+   "meaning_hu": "Senkit nem lehet olyan cselekményért büntetni, amely elkövetésekor nem volt bűncselekmény, és a büntetés nem lehet súlyosabb az akkor megállapítottnál.",
+   "holder": "Every person",
+   "binds": "Legislators, courts and prosecutors",
+   "limits": "Acts criminal under general principles of law recognised by nations remain punishable; milder later law applies",
+   "balanced_with": [
+    "r04",
+    "r21"
+   ],
+   "common_misreadings": [
+    "Read as meaning a harmful act may never be penalised because no rule named it exactly",
+    "Applied backwards to deny that a new, milder rule helps an earlier offender",
+    "Invoked about civil or political consequences that are not criminal penalties"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": []
+  },
+  {
+   "id": "r06",
+   "term": "Liberty and security of the person",
+   "term_hu": "Személyi szabadság és biztonság",
+   "meaning": "No one is deprived of liberty except in cases and by a procedure set by law, with a court able to review it promptly.",
+   "meaning_hu": "Senkitől nem lehet elvenni a szabadságát, csak törvényben meghatározott esetben és eljárásban, és ezt bíróságnak gyorsan felül kell tudnia vizsgálni.",
+   "holder": "Every person",
+   "binds": "The state: police, prosecutors, courts, detention facilities",
+   "limits": "Lawful detention exists (after conviction, on reasonable suspicion, for defined protective reasons) but must be necessary, proportionate and reviewed",
+   "balanced_with": [
+    "r03",
+    "r04",
+    "r22"
+   ],
+   "common_misreadings": [
+    "Read as forbidding all pre-trial custody",
+    "Read as allowing custody to punish before judgment or to obtain cooperation",
+    "Claimed as violated without regard to the grounds the court gave"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": [
+    "l03",
+    "l04",
+    "l06"
+   ]
+  },
+  {
+   "id": "r07",
+   "term": "Freedom of expression and information",
+   "term_hu": "Véleménynyilvánítás és tájékozódás szabadsága",
+   "meaning": "Everyone may hold opinions and share and receive information and ideas without interference by public authorities.",
+   "meaning_hu": "Mindenki szabadon vallhat véleményt, és közölhet vagy kaphat információt és gondolatot hatósági beavatkozás nélkül.",
+   "holder": "Every person",
+   "binds": "Primarily the state; private platforms and employers are bound by it only through law and contract",
+   "limits": "Limits must be set by law, pursue a legitimate aim (e.g. others' reputation, public order, protection of minors) and be necessary in a democratic society; incitement to violence, threats and unlawful harassment are not protected",
+   "balanced_with": [
+    "r01",
+    "r10",
+    "r11",
+    "r03"
+   ],
+   "common_misreadings": [
+    "Read as a right to be free of criticism or of private moderation decisions",
+    "Read as covering threats, incitement or harassment without limit",
+    "Stated as absolute by one side and as dispensable for opinions it dislikes by the other"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": [
+    "p07",
+    "pe02"
+   ]
+  },
+  {
+   "id": "r08",
+   "term": "Media freedom and pluralism",
+   "term_hu": "Sajtószabadság és médiapluralizmus",
+   "meaning": "The press and other media may report and comment independently, and the state must respect and protect a variety of sources and views.",
+   "meaning_hu": "A sajtó és a többi média függetlenül tudósíthat és véleményezhet, az államnak pedig tiszteletben kell tartania és védenie kell a források és nézetek sokféleségét.",
+   "holder": "Journalists, media outlets and the public",
+   "binds": "The state and EU institutions",
+   "limits": "Media remain bound by defamation, privacy and accuracy duties; protection of sources is strong but not unlimited",
+   "balanced_with": [
+    "r07",
+    "r11",
+    "r03"
+   ],
+   "common_misreadings": [
+    "Read as immunity from any correction or legal liability",
+    "Read as the state's right to decide what counts as balanced coverage",
+    "Used to treat any criticism of an outlet as an attack on press freedom"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": [
+    "pe01",
+    "pe02",
+    "pe11"
+   ]
+  },
+  {
+   "id": "r09",
+   "term": "Freedom of assembly and association",
+   "term_hu": "Gyülekezési és egyesülési szabadság",
+   "meaning": "People may meet peacefully and form or join groups, parties and unions.",
+   "meaning_hu": "Az emberek békésen gyűlhetnek össze, és szabadon alapíthatnak vagy csatlakozhatnak csoportokhoz, pártokhoz, szakszervezetekhez.",
+   "holder": "Every person; associations as groups",
+   "binds": "The state",
+   "limits": "Limits for public safety, order and others' rights if necessary and proportionate; the assembly must be peaceful",
+   "balanced_with": [
+    "r07",
+    "r02",
+    "r15"
+   ],
+   "common_misreadings": [
+    "Read as a right to block others' movement or rights without limit",
+    "Read as a right of the authorities to ban gatherings whenever opinions displease",
+    "Applied to a group's views while the same measure is denied to the opposite group"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": []
+  },
+  {
+   "id": "r10",
+   "term": "Freedom of thought, conscience and religion",
+   "term_hu": "Gondolat-, lelkiismeret- és vallásszabadság",
+   "meaning": "Everyone may hold, change and (within limits) live out their beliefs, religious or not, alone or with others.",
+   "meaning_hu": "Mindenki szabadon vallhat, változtathat és (korlátok között) élhet is meggyőződése szerint, vallásos vagy más, egyedül vagy másokkal.",
+   "holder": "Every person",
+   "binds": "The state; the inner belief is absolute, outward practice may be limited",
+   "limits": "Manifesting a belief may be limited by law where necessary for safety, health, order or others' rights",
+   "balanced_with": [
+    "r02",
+    "r07",
+    "r12",
+    "r13"
+   ],
+   "common_misreadings": [
+    "Read as exempting believers from any general law",
+    "Read as licence to treat a belief as automatically suspect or backward",
+    "Used for one tradition's practices while another's are called extremist"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": [
+    "p06"
+   ]
+  },
+  {
+   "id": "r11",
+   "term": "Privacy and data protection",
+   "term_hu": "Magánélet és személyes adatok védelme",
+   "meaning": "Everyone's private and family life, home, communications and personal data are protected from unlawful or arbitrary intrusion.",
+   "meaning_hu": "Mindenki magán- és családi élete, otthona, levelezése és személyes adatai védettek a jogellenes vagy önkényes beavatkozástól.",
+   "holder": "Every person",
+   "binds": "The state; private bodies through data-protection law",
+   "limits": "Interference is lawful if set by law, necessary and proportionate; public figures have a narrower private sphere in matters of public interest",
+   "balanced_with": [
+    "r07",
+    "r08",
+    "r12"
+   ],
+   "common_misreadings": [
+    "Read as banning any public mention of a named person",
+    "Read as barring all surveillance or data use, including lawful and proportionate ones",
+    "Stretched to shield matters of real public interest from reporting"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": [
+    "pe07"
+   ]
+  },
+  {
+   "id": "r12",
+   "term": "Rights of the child",
+   "term_hu": "A gyermek jogai",
+   "meaning": "Children are rights-holders: their best interests come first in decisions about them, they are protected from harm, and they may be heard in line with age and maturity.",
+   "meaning_hu": "A gyermek jogok alanya: a döntéseknél elsődleges a mindenek felett álló érdeke, védelmet kap a bántalmazással szemben, és életkorához és érettségéhez mérten meghallgatandó.",
+   "holder": "Every person under eighteen",
+   "binds": "The state, courts, schools and carers; parents are bound in exercising their responsibility",
+   "limits": "Parental guidance is lawful and expected; the child's growing capacity increases weight of their views; abuse, neglect and exploitation are crimes and never covered",
+   "balanced_with": [
+    "r13",
+    "r14",
+    "r06",
+    "r11"
+   ],
+   "common_misreadings": [
+    "Invoked to override parents' lawful role where no harm or legal ground is shown",
+    "Invoked to dismiss the child's own views or access to age-appropriate information",
+    "Cited for one side of a dispute while ignoring the counterpart duties of the other"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": [
+    "pe08"
+   ]
+  },
+  {
+   "id": "r13",
+   "term": "Parents' right to educate in line with their convictions",
+   "term_hu": "A szülők joga a gyermek neveléséhez saját meggyőződésük szerint",
+   "meaning": "Parents have the primary responsibility for their children's upbringing, and the state must respect their religious and philosophical convictions in education.",
+   "meaning_hu": "A szülőké a gyermek nevelésének elsődleges felelőssége, az államnak pedig az oktatásban tiszteletben kell tartania vallási és világnézeti meggyőződésüket.",
+   "holder": "Parents and legal guardians",
+   "binds": "The state in its educational functions",
+   "limits": "State schooling may convey information in an objective, critical and pluralistic way, including age-appropriate sex education, without this violating parents' convictions; it may not indoctrinate; the child's best interests prevail where they conflict",
+   "balanced_with": [
+    "r12",
+    "r14",
+    "r10"
+   ],
+   "common_misreadings": [
+    "Read as a right to veto any lawful curriculum content",
+    "Read as meaning parents' convictions never count in school matters",
+    "Used to presume parents harmful or, in the other direction, the state's teaching harmful, without grounds"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": []
+  },
+  {
+   "id": "r14",
+   "term": "Right to education",
+   "term_hu": "Oktatáshoz való jog",
+   "meaning": "Everyone has the right to education and to access to vocational training, and the state must provide it without discrimination.",
+   "meaning_hu": "Mindenkinek joga van az oktatáshoz és a szakképzéshez való hozzáféréshez, és az államnak ezt megkülönböztetés nélkül kell biztosítania.",
+   "holder": "Every person; children above all",
+   "binds": "The state, which organises and supervises schooling",
+   "limits": "The state may regulate schools and curricula within limits of pluralism; the right does not require a particular school type",
+   "balanced_with": [
+    "r13",
+    "r12",
+    "r02"
+   ],
+   "common_misreadings": [
+    "Read as a right to any particular school or content of one's choosing",
+    "Read as satisfied by access alone, ignoring quality and non-discrimination",
+    "Used in one direction only, for either state or family claims"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": []
+  },
+  {
+   "id": "r15",
+   "term": "Free elections: the right to vote and to stand",
+   "term_hu": "Szabad választások: választójog és választhatóság",
+   "meaning": "Citizens vote by secret ballot at regular elections and may stand as candidates, so that the people can choose the legislature.",
+   "meaning_hu": "Az állampolgárok rendszeres választásokon titkos szavazással szavaznak, és jelöltként indulhatnak, így a nép választja a törvényhozást.",
+   "holder": "Eligible citizens and residents as set by law",
+   "binds": "The state in organising elections",
+   "limits": "Age, residence and similar conditions may be set if reasonable and non-arbitrary; blanket exclusions need strong justification",
+   "balanced_with": [
+    "r16",
+    "r09",
+    "r07"
+   ],
+   "common_misreadings": [
+    "Read as meaning the winner may disregard all minority views",
+    "Read as meaning any restriction on candidacy is illegitimate",
+    "Used to dispute results or rules by one camp that it accepts when it wins"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": []
+  },
+  {
+   "id": "r16",
+   "term": "Parliamentary mandate and the speech of representatives",
+   "term_hu": "A képviselői megbízatás és a képviselők szólásszabadsága",
+   "meaning": "An elected representative speaks and votes for the voters, with wide room to speak in the chamber and limited protection from legal action for those words.",
+   "meaning_hu": "A megválasztott képviselő a választók nevében szól és szavaz, a testületben tág teret kap a felszólalásra, és az itt elmondottak miatt korlátozott jogi védelmet élvez.",
+   "holder": "Members of parliament, and through them their voters",
+   "binds": "Other state bodies; members themselves remain bound by chamber rules and by criminal law outside the protected scope",
+   "limits": "Immunity covers opinions and votes in the performance of the mandate, not unrelated conduct; abusive or unlawful speech may be sanctioned by chamber rules",
+   "balanced_with": [
+    "r15",
+    "r07",
+    "r20"
+   ],
+   "common_misreadings": [
+    "Read as impunity for any act or statement of a member",
+    "Read as meaning a member may be silenced for an opinion disliked by the majority",
+    "Applied to members of one party while the other side's members are held to a different standard"
+   ],
+   "source_name": "Treaty on European Union",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12016M/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12016M/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": []
+  },
+  {
+   "id": "r17",
+   "term": "Good administration",
+   "term_hu": "Jó ügyintézés",
+   "meaning": "Public bodies handle a person's affairs impartially, fairly and within a reasonable time, hear the person before an adverse measure, and give reasons.",
+   "meaning_hu": "A hatóságok a személy ügyét pártatlanul, tisztességesen és ésszerű időn belül intézik, hátrányos intézkedés előtt meghallgatják, és indokolnak.",
+   "holder": "Every person dealing with EU institutions (and, by national law, national authorities)",
+   "binds": "EU institutions, bodies and agencies; national authorities under national law and EU law where it applies",
+   "limits": "Charter text addresses EU bodies directly; national authorities are bound by the general principles of EU law when applying it",
+   "balanced_with": [
+    "r18",
+    "r19",
+    "r04"
+   ],
+   "common_misreadings": [
+    "Read as a right to the decision one wants",
+    "Read as requiring a hearing for every routine act regardless of effect",
+    "Claimed against private bodies that it does not bind"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "EU law",
+   "same_as": []
+  },
+  {
+   "id": "r18",
+   "term": "Access to documents",
+   "term_hu": "Hozzáférés a dokumentumokhoz",
+   "meaning": "Citizens may read documents held by public institutions, unless a defined exception such as security or privacy applies.",
+   "meaning_hu": "A polgárok megismerhetik a közintézmények birtokában lévő dokumentumokat, kivéve ha meghatározott kivétel, például biztonság vagy magánélet védelme áll fenn.",
+   "holder": "Citizens and residents",
+   "binds": "EU institutions; national bodies under national law",
+   "limits": "Exceptions (security, privacy, commercial interests, ongoing decisions) are read narrowly and weighed against public interest",
+   "balanced_with": [
+    "r17",
+    "r11",
+    "r07"
+   ],
+   "common_misreadings": [
+    "Read as a right to everything the authority holds",
+    "Read as meaning any refusal proves concealment",
+    "Used selectively, demanding openness from one side only"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": []
+  },
+  {
+   "id": "r19",
+   "term": "Effective remedy and access to a court",
+   "term_hu": "Hatékony jogorvoslat és bírósághoz fordulás joga",
+   "meaning": "Anyone whose rights are violated can challenge it before an independent and impartial court that can give a real remedy.",
+   "meaning_hu": "Akinek a jogát megsértik, az független és pártatlan bíróság előtt vitathatja, amely valódi jogorvoslatot adhat.",
+   "holder": "Every person",
+   "binds": "Member states and EU institutions in setting up courts and procedures",
+   "limits": "Reasonable time limits and admissibility rules are lawful if they do not make the right illusory",
+   "balanced_with": [
+    "r04",
+    "r20",
+    "r21"
+   ],
+   "common_misreadings": [
+    "Read as a guarantee that the court will rule in one's favour",
+    "Read as satisfied by a nominal procedure with no power to change the outcome",
+    "Cited for one's own claims and denied to opponents"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": [
+    "l06"
+   ]
+  },
+  {
+   "id": "r20",
+   "term": "Separation of powers and judicial independence",
+   "term_hu": "Hatalmi ágak szétválasztása és bírói függetlenség",
+   "meaning": "Legislative, executive and judicial power are held apart, and judges decide cases free of pressure from the other branches or the parties.",
+   "meaning_hu": "A törvényhozó, végrehajtó és bírói hatalom elkülönül, a bírák pedig a többi hatalmi ágtól és a felektől befolyásmentesen döntenek.",
+   "holder": "Citizens and litigants, through the court system",
+   "binds": "The state, all branches",
+   "limits": "Judges remain accountable through reasoning, appeal and disciplinary procedures set by law",
+   "balanced_with": [
+    "r19",
+    "r21",
+    "r16"
+   ],
+   "common_misreadings": [
+    "Read as meaning judges may never be criticised",
+    "Read as meaning any unfavourable judgment proves bias or interference",
+    "Applied to courts when they rule against one camp and ignored when they rule against the other"
+   ],
+   "source_name": "Treaty on European Union",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12016M/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12016M/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": [
+    "l10"
+   ]
+  },
+  {
+   "id": "r21",
+   "term": "Rule of law: legality and legal certainty",
+   "term_hu": "A jogállamiság: törvényesség és jogbiztonság",
+   "meaning": "Public power acts only on the basis of law that is clear, public and applied equally, with no arbitrary decisions and review by courts.",
+   "meaning_hu": "A közhatalom csak világos, nyilvános és mindenkire egyformán alkalmazott jogszabály alapján jár el, önkényes döntés nélkül, bírói felülvizsgálattal.",
+   "holder": "Everyone subject to public power",
+   "binds": "All public bodies, legislators included",
+   "limits": "Law may change; retroactive burdens, vague rules and unchecked discretion are what the principle resists",
+   "balanced_with": [
+    "r19",
+    "r20",
+    "r05"
+   ],
+   "common_misreadings": [
+    "Read as meaning every law is acceptable once enacted",
+    "Read as a one-sided charge against opponents' acts while one's own are exempt",
+    "Treated as a slogan rather than tested against legality, certainty and review"
+   ],
+   "source_name": "Treaty on European Union",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12016M/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12016M/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": []
+  },
+  {
+   "id": "r22",
+   "term": "Prohibition of torture and degrading treatment",
+   "term_hu": "A kínzás és megalázó bánásmód tilalma",
+   "meaning": "No one may be tortured or subjected to inhuman or degrading treatment or punishment, in any circumstance.",
+   "meaning_hu": "Senkit nem lehet kínozni, sem embertelen vagy megalázó bánásmódnak vagy büntetésnek alávetni, semmilyen körülmények között.",
+   "holder": "Every person, including suspects and prisoners",
+   "binds": "The state and its agents, without exception",
+   "limits": "Absolute: no limit, no balancing; the dividing line (severity threshold) is a matter for the courts",
+   "balanced_with": [
+    "r01",
+    "r06"
+   ],
+   "common_misreadings": [
+    "Read as covering any discomfort of lawful custody",
+    "Read as allowed for 'bad people' or in emergencies",
+    "Invoked for one side's detainees while the same conditions for others are ignored"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": [
+    "l05",
+    "l07",
+    "l08"
+   ]
+  },
+  {
+   "id": "r23",
+   "term": "Minority rights",
+   "term_hu": "A kisebbségek jogai",
+   "meaning": "People belonging to national or other minorities enjoy the same rights as everyone and may keep and develop their culture, language and religion.",
+   "meaning_hu": "A nemzeti és más kisebbségekhez tartozók mindenki mással azonos jogokat élveznek, és megőrizhetik és fejleszthetik kultúrájukat, nyelvüket és vallásukat.",
+   "holder": "Persons belonging to minorities (individually and with others)",
+   "binds": "The state",
+   "limits": "Rights are exercised within the law and do not permit acts against the state's territorial integrity or others' rights",
+   "balanced_with": [
+    "r02",
+    "r09",
+    "r10"
+   ],
+   "common_misreadings": [
+    "Read as a claim to special treatment beyond equality",
+    "Read as meaning a minority's claims never deserve consideration",
+    "Used for one minority while another's equal claim is dismissed"
+   ],
+   "source_name": "Treaty on European Union",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12016M/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12016M/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": [
+    "pe10"
+   ]
+  },
+  {
+   "id": "r24",
+   "term": "Property",
+   "term_hu": "Tulajdonhoz való jog",
+   "meaning": "Everyone may enjoy their lawfully acquired possessions; a person may be deprived of property only in the public interest, by law and with fair compensation.",
+   "meaning_hu": "Mindenki háborítatlanul birtokolhatja törvényesen szerzett vagyonát; tulajdonától csak közérdekből, törvény alapján és igazságos kártalanítással fosztható meg.",
+   "holder": "Every person, natural or legal",
+   "binds": "The state",
+   "limits": "The state may regulate use of property in the general interest and collect taxes; deprivation needs law, public interest and compensation",
+   "balanced_with": [
+    "r21",
+    "r19"
+   ],
+   "common_misreadings": [
+    "Read as freedom from any regulation or taxation",
+    "Read as no protection when the owner is unpopular",
+    "Cited for one owner while the same measure is accepted against another"
+   ],
+   "source_name": "EU Charter of Fundamental Rights",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+   "source_accessed": "2026-11-01",
+   "url_hu": "https://eur-lex.europa.eu/legal-content/HU/TXT/?uri=CELEX:12012P/TXT",
+   "url_hu_accessed": "2026-11-01",
+   "scope": "both",
+   "same_as": []
+  }
+ ],
+ "findings": [
+  {
+   "id": "p01",
+   "explain": "Debate is treated as valuable: a differing opinion is a chance to learn, not a threat to be removed. A text that calls disagreement itself harmful leaves no room for argument.",
+   "legit_form": "Firm criticism of a specific claim, which is itself part of debate.",
+   "how_to_respond_fairly": "Answer the claim, and say that disagreeing is welcome.",
+   "refs_free": [
+    {
+     "name": "Váltsunk hangnemet! manifesto (Facebook post)",
+     "url": "https://www.facebook.com/valtsunkhangnemet/posts/pfbid0hBKBhQeFUB5vLgCQ9NPfTJgFXg72jqKoYzBCJTNtextTUEkm4uNGoYotL6h8kpasl",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "p02",
+   "explain": "The argument is answered, not the person who makes it. Remarks on the speaker's character or background replace a reply that was owed.",
+   "legit_form": "Pointing out a documented conflict of interest that bears directly on a claim.",
+   "how_to_respond_fairly": "Restate the argument and answer that; leave the speaker out.",
+   "refs_free": [
+    {
+     "name": "Váltsunk hangnemet! manifesto (Facebook post)",
+     "url": "https://www.facebook.com/valtsunkhangnemet/posts/pfbid0hBKBhQeFUB5vLgCQ9NPfTJgFXg72jqKoYzBCJTNtextTUEkm4uNGoYotL6h8kpasl",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "p03",
+   "explain": "The other party is a debate partner, not an enemy. Enemy language makes listening and compromise look like betrayal.",
+   "legit_form": "Naming a real, lawful conflict of interests between two parties.",
+   "how_to_respond_fairly": "Name the disagreement without casting the other side as an enemy.",
+   "refs_free": [
+    {
+     "name": "Váltsunk hangnemet! manifesto (Facebook post)",
+     "url": "https://www.facebook.com/valtsunkhangnemet/posts/pfbid0hBKBhQeFUB5vLgCQ9NPfTJgFXg72jqKoYzBCJTNtextTUEkm4uNGoYotL6h8kpasl",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "p04",
+   "explain": "Understanding comes first: the text shows it has grasped the other position before replying. Answering a claim nobody made, or skipping a point, breaks this.",
+   "legit_form": "A short reply that quotes the point it answers.",
+   "how_to_respond_fairly": "Quote the other's point, check you read it right, then reply.",
+   "refs_free": [
+    {
+     "name": "Váltsunk hangnemet! manifesto (Facebook post)",
+     "url": "https://www.facebook.com/valtsunkhangnemet/posts/pfbid0hBKBhQeFUB5vLgCQ9NPfTJgFXg72jqKoYzBCJTNtextTUEkm4uNGoYotL6h8kpasl",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "p05",
+   "explain": "The aim is understanding, not conversion. A text that only seeks to win over, or to make the other give in, misses this.",
+   "legit_form": "Making a strong, honest case for one's own view.",
+   "how_to_respond_fairly": "State your case and ask what would change the other side's mind.",
+   "refs_free": [
+    {
+     "name": "Váltsunk hangnemet! manifesto (Facebook post)",
+     "url": "https://www.facebook.com/valtsunkhangnemet/posts/pfbid0hBKBhQeFUB5vLgCQ9NPfTJgFXg72jqKoYzBCJTNtextTUEkm4uNGoYotL6h8kpasl",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "p06",
+   "explain": "Sincere convictions are respected and not forced on others. Mockery of a belief, or pressure to give it up, breaks this.",
+   "legit_form": "Disagreeing with a conviction, and giving reasons.",
+   "how_to_respond_fairly": "Argue the reasons, not the believer; leave the conviction its dignity.",
+   "refs_free": [
+    {
+     "name": "Váltsunk hangnemet! manifesto (Facebook post)",
+     "url": "https://www.facebook.com/valtsunkhangnemet/posts/pfbid0hBKBhQeFUB5vLgCQ9NPfTJgFXg72jqKoYzBCJTNtextTUEkm4uNGoYotL6h8kpasl",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "p07",
+   "explain": "Arguments, not force, decide a debate. Volume, mockery or mass pressure replace reasons with pressure.",
+   "legit_form": "Strong emphasis or humour that still carries an argument.",
+   "how_to_respond_fairly": "Reply to the content in plain words and skip the escalation.",
+   "refs_free": [
+    {
+     "name": "Váltsunk hangnemet! manifesto (Facebook post)",
+     "url": "https://www.facebook.com/valtsunkhangnemet/posts/pfbid0hBKBhQeFUB5vLgCQ9NPfTJgFXg72jqKoYzBCJTNtextTUEkm4uNGoYotL6h8kpasl",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "p08",
+   "explain": "Being wrong is allowed. A text that admits no error, or punishes the other for one, shuts down learning.",
+   "legit_form": "Holding a position firmly while open to evidence.",
+   "how_to_respond_fairly": "Say what would change your mind, and credit the other's correction.",
+   "refs_free": [
+    {
+     "name": "Váltsunk hangnemet! manifesto (Facebook post)",
+     "url": "https://www.facebook.com/valtsunkhangnemet/posts/pfbid0hBKBhQeFUB5vLgCQ9NPfTJgFXg72jqKoYzBCJTNtextTUEkm4uNGoYotL6h8kpasl",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "p09",
+   "explain": "Every person keeps their dignity, whatever their opinion. Humiliation is not an argument and is not justified by a view.",
+   "legit_form": "Sharp but factual criticism of conduct.",
+   "how_to_respond_fairly": "Keep the criticism factual and remove wording that demeans the person.",
+   "refs_free": [
+    {
+     "name": "Váltsunk hangnemet! manifesto (Facebook post)",
+     "url": "https://www.facebook.com/valtsunkhangnemet/posts/pfbid0hBKBhQeFUB5vLgCQ9NPfTJgFXg72jqKoYzBCJTNtextTUEkm4uNGoYotL6h8kpasl",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "p10",
+   "explain": "We answer for what we pass on: sharing a claim, quote or post makes it ours. Repeating an unchecked item shifts the cost onto its target.",
+   "legit_form": "Sharing with a clear note that the item is unverified or disputed.",
+   "how_to_respond_fairly": "Check before sharing, and say what you did and did not verify.",
+   "refs_free": [
+    {
+     "name": "Váltsunk hangnemet! manifesto (Facebook post)",
+     "url": "https://www.facebook.com/valtsunkhangnemet/posts/pfbid0hBKBhQeFUB5vLgCQ9NPfTJgFXg72jqKoYzBCJTNtextTUEkm4uNGoYotL6h8kpasl",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "p11",
+   "explain": "A fair method states the other side accurately, with no strawmen and no one-sided picking of evidence.",
+   "legit_form": "A short summary of the other side that they would recognise.",
+   "how_to_respond_fairly": "Restate their view the way they would, then answer that version.",
+   "refs_free": []
+  },
+  {
+   "id": "p12",
+   "explain": "Plain words and honest evidence: loaded terms are avoided and no claim is stronger than its evidence. Emotive labels and overstatement break this.",
+   "legit_form": "A vivid but accurate description backed by evidence.",
+   "how_to_respond_fairly": "Swap the loaded term for a neutral one and say what the evidence shows.",
+   "refs_free": []
+  },
+  {
+   "id": "m01",
+   "explain": "Deflection moves the topic to what the other side did, so the original question is never answered. It matters because the point at issue is lost.",
+   "legit_form": "Raising a real inconsistency that bears on the same question.",
+   "how_to_respond_fairly": "Name the original question and answer or ask it again.",
+   "refs_free": [
+    {
+     "name": "Internet Encyclopedia of Philosophy: Fallacies",
+     "url": "https://iep.utm.edu/fallacy/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m02",
+   "explain": "Shifting blame puts one's own fault on the other party. It matters because responsibility is moved away from where the facts put it.",
+   "legit_form": "Pointing out a real, documented share of responsibility.",
+   "how_to_respond_fairly": "Set out who did what with dates and sources.",
+   "refs_free": [
+    {
+     "name": "Internet Encyclopedia of Philosophy: Fallacies",
+     "url": "https://iep.utm.edu/fallacy/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m03",
+   "explain": "DARVO runs Deny, Attack, Reverse Victim and Offender: the accusation is denied, the accuser attacked, and the speaker presented as the wronged party. It matters because the original claim is never examined.",
+   "legit_form": "Honest denial of a false accusation, or a real counter-complaint made on the facts.",
+   "how_to_respond_fairly": "Return to the original claim and ask for the facts on it.",
+   "refs_free": [
+    {
+     "name": "Freyd: What is DARVO?",
+     "url": "https://dynamic.uoregon.edu/jjf/defineDARVO.html",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m04",
+   "explain": "Character assassination attacks someone's credibility instead of their argument. It matters because a claim stands or falls on its content.",
+   "legit_form": "Showing, with evidence, that a source has a verified record of unreliability on this very point.",
+   "how_to_respond_fairly": "Restate the argument and answer it on its merits.",
+   "refs_free": [
+    {
+     "name": "Internet Encyclopedia of Philosophy: Fallacies",
+     "url": "https://iep.utm.edu/fallacy/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m05",
+   "explain": "Flooding sends so many claims that none can be answered in time. It matters because unanswered items can look like conceded ones.",
+   "legit_form": "A long, well-organised document that lists sources for each point.",
+   "how_to_respond_fairly": "Pick the one or two strongest points and answer only those, saying so.",
+   "refs_free": [
+    {
+     "name": "Internet Encyclopedia of Philosophy: Fallacies",
+     "url": "https://iep.utm.edu/fallacy/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m06",
+   "explain": "A background campaign enlists others to apply pressure, away from the open exchange. It matters because the pressure, not the argument, decides the outcome.",
+   "legit_form": "Openly asking supporters to read and comment on a position.",
+   "how_to_respond_fairly": "Move the exchange back to the open channel and the original question.",
+   "refs_free": [
+    {
+     "name": "First Draft: Fake news, it's complicated",
+     "url": "https://firstdraftnews.org/articles/fake-news-complicated/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m07",
+   "explain": "A tactical retreat is a show of reconciliation that draws the other party back before the pressure resumes. It matters because trust is used against the person who gave it.",
+   "legit_form": "A real change of position that holds in later behaviour.",
+   "how_to_respond_fairly": "Ask for the concrete commitment and check it against later conduct.",
+   "refs_free": [
+    {
+     "name": "First Draft: Fake news, it's complicated",
+     "url": "https://firstdraftnews.org/articles/fake-news-complicated/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m08",
+   "explain": "Official pressure threatens reports to authorities, or exposure, to force a result. It matters because it substitutes threat for reasons and may itself breach the law.",
+   "legit_form": "Notifying an authority of a genuine legal breach, said openly.",
+   "how_to_respond_fairly": "Keep a record, stay on the argument, and seek legal or professional advice.",
+   "refs_free": [
+    {
+     "name": "Internet Encyclopedia of Philosophy: Fallacies",
+     "url": "https://iep.utm.edu/fallacy/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m09",
+   "explain": "Astroturfing is commissioned opinion presented as spontaneous crowd opinion: fake profiles or organised comments make a few look like many. It matters because the apparent size of support is not real.",
+   "legit_form": "A genuine campaign by identified supporters, open about who runs it.",
+   "how_to_respond_fairly": "Check the accounts and the source before inferring any real level of support.",
+   "refs_free": [
+    {
+     "name": "First Draft: Fake news, it's complicated",
+     "url": "https://firstdraftnews.org/articles/fake-news-complicated/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m10",
+   "explain": "A strawman argues against a distorted, easier version of the other side's view. It matters because the actual position goes unanswered.",
+   "legit_form": "A fair summary of a position, followed by a real critique.",
+   "how_to_respond_fairly": "Quote what was actually said and point to the difference.",
+   "refs_free": [
+    {
+     "name": "Internet Encyclopedia of Philosophy: Fallacies",
+     "url": "https://iep.utm.edu/fallacy/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m11",
+   "explain": "Gaslighting denies that something happened, or makes the other party doubt their own memory. It matters because the person is led to distrust what they know.",
+   "legit_form": "A genuine, evidence-based difference over what happened.",
+   "how_to_respond_fairly": "Record dates and sources and compare them with the claim.",
+   "refs_free": [
+    {
+     "name": "First Draft: Fake news, it's complicated",
+     "url": "https://firstdraftnews.org/articles/fake-news-complicated/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m12",
+   "explain": "A false dilemma offers two options when more exist. It matters because the real choice is hidden.",
+   "legit_form": "Naming two options that really are the only two, or the two main ones, with the others set aside openly.",
+   "how_to_respond_fairly": "Name the options left out.",
+   "refs_free": [
+    {
+     "name": "Internet Encyclopedia of Philosophy: Fallacies",
+     "url": "https://iep.utm.edu/fallacy/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m13",
+   "explain": "A false analogy treats two different situations as alike. It matters because conclusions that fit the first case are carried over to the second without a shared basis.",
+   "legit_form": "A comparison that names the specific features the two cases share.",
+   "how_to_respond_fairly": "Point to the relevant difference between the cases.",
+   "refs_free": [
+    {
+     "name": "Internet Encyclopedia of Philosophy: Fallacies",
+     "url": "https://iep.utm.edu/fallacy/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m14",
+   "explain": "A loaded question puts an accusation inside a question so any direct answer accepts it. It matters because the premise is never examined.",
+   "legit_form": "A question about something already established.",
+   "how_to_respond_fairly": "Reject or restate the premise before answering.",
+   "refs_free": [
+    {
+     "name": "Internet Encyclopedia of Philosophy: Fallacies",
+     "url": "https://iep.utm.edu/fallacy/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m15",
+   "explain": "Attributed motive claims to know why someone acts, without showing it. It matters because the stated motive cannot be checked and replaces the argument.",
+   "legit_form": "Citing a stated purpose, or a documented interest tied to the claim.",
+   "how_to_respond_fairly": "Ask for what shows the motive, or answer the act itself.",
+   "refs_free": [
+    {
+     "name": "Internet Encyclopedia of Philosophy: Fallacies",
+     "url": "https://iep.utm.edu/fallacy/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m16",
+   "explain": "Generalization attributes one view or act to a whole group. It matters because individuals are charged for what others said or did.",
+   "legit_form": "A statement of a documented, measured share of a group, with the figure.",
+   "how_to_respond_fairly": "Ask how many, and name the individual who said it.",
+   "refs_free": [
+    {
+     "name": "Internet Encyclopedia of Philosophy: Fallacies",
+     "url": "https://iep.utm.edu/fallacy/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m17",
+   "explain": "Loaded language or euphemism frames an issue with emotive or softened words. It matters because the word decides the reader's view before the facts do.",
+   "legit_form": "A strong word that is accurate and defined.",
+   "how_to_respond_fairly": "Replace the term with a neutral one and state the facts.",
+   "refs_free": [
+    {
+     "name": "Orwell: Politics and the English Language",
+     "url": "https://www.orwell.ru/library/essays/politics/english/e_polit",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m18",
+   "explain": "A fear or outrage appeal uses threat or anger to bypass evaluation. It matters because the reader reacts before checking.",
+   "legit_form": "Warning about a documented, proportionate risk.",
+   "how_to_respond_fairly": "State the actual size of the risk and the evidence.",
+   "refs_free": [
+    {
+     "name": "Internet Encyclopedia of Philosophy: Fallacies",
+     "url": "https://iep.utm.edu/fallacy/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m19",
+   "explain": "Cherry-picking shows only the data or quotes that favour one side and drops the context. It matters because the omitted part changes the meaning.",
+   "legit_form": "A summary that says it is partial and states what was left out.",
+   "how_to_respond_fairly": "Supply the missing data or full quote.",
+   "refs_free": [
+    {
+     "name": "Internet Encyclopedia of Philosophy: Fallacies",
+     "url": "https://iep.utm.edu/fallacy/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m20",
+   "explain": "Fake or out-of-context quotes attribute words to someone who never said them, or use a clipped quote or video. It matters because the person is held to something they did not say in that sense.",
+   "legit_form": "A short excerpt that keeps the meaning and gives its source.",
+   "how_to_respond_fairly": "Link the full original and compare it with the excerpt.",
+   "refs_free": [
+    {
+     "name": "First Draft: Fake news, it's complicated",
+     "url": "https://firstdraftnews.org/articles/fake-news-complicated/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m21",
+   "explain": "Moving the goalposts changes the standard of proof once the first one is met. It matters because no evidence can ever be enough.",
+   "legit_form": "A new standard after new information that really changes the question, announced as such.",
+   "how_to_respond_fairly": "Ask what evidence would be enough, and note it down.",
+   "refs_free": [
+    {
+     "name": "Internet Encyclopedia of Philosophy: Fallacies",
+     "url": "https://iep.utm.edu/fallacy/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m22",
+   "explain": "Bandwagon pressure says 'everyone knows' or shows staged popularity. It matters because the number of supporters stands in for evidence.",
+   "legit_form": "Reporting measured, sourced support with its method.",
+   "how_to_respond_fairly": "Ask for the source of the numbers and judge the claim on its merits.",
+   "refs_free": [
+    {
+     "name": "Internet Encyclopedia of Philosophy: Fallacies",
+     "url": "https://iep.utm.edu/fallacy/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m23",
+   "explain": "Rights-term misuse stretches a right or legal principle past its meaning, inverts it, or applies it to one side only, and rests a conclusion on that. It matters because a legal word then seems to settle a question it does not.",
+   "legit_form": "A real conflict between two rights, argued with both named.",
+   "how_to_respond_fairly": "Check the term against its meaning, holder, who it binds and its limits.",
+   "refs_free": [
+    {
+     "name": "EU Charter of Fundamental Rights",
+     "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m24",
+   "explain": "Delegitimizing an opinion presents a lawful view, or the person holding it, as illegitimate, evil, or not entitled to be voiced, in place of an argument. It matters because the view is removed from discussion without being answered.",
+   "legit_form": "Arguing that a view is wrong, or pointing to a specific unlawful act.",
+   "how_to_respond_fairly": "Ask for the argument against the view itself.",
+   "refs_free": [
+    {
+     "name": "Internet Encyclopedia of Philosophy: Fallacies",
+     "url": "https://iep.utm.edu/fallacy/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "l01",
+   "explain": "Procedural rights apply to every suspect, whoever they are and whatever the public mood.",
+   "legit_form": "Differences in procedure the law itself provides for, for example by age.",
+   "how_to_respond_fairly": "Ask whether the same guarantee was applied to everyone in the same position.",
+   "refs_free": [
+    {
+     "name": "Jurists' statement: The ten points of a rule-of-law criminal justice system (full text, index.hu)",
+     "url": "https://index.hu/belfold/2026/10/29/jogallamisag-nyilatkozat-miniszter-ugyved-alkotmenybiro/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "l02",
+   "explain": "Officials do not present a suspect as guilty before a final judgment, in words or in staging. A suspect shown in restraints for the cameras, or called guilty by an official, is the typical case.",
+   "legit_form": "Reporting that a suspicion or charge exists, in neutral words.",
+   "how_to_respond_fairly": "Quote the wording and ask for the court's decision.",
+   "refs_free": [
+    {
+     "name": "Jurists' statement: The ten points of a rule-of-law criminal justice system (full text, index.hu)",
+     "url": "https://index.hu/belfold/2026/10/29/jogallamisag-nyilatkozat-miniszter-ugyved-alkotmenybiro/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "l03",
+   "explain": "Liberty is the rule: pre-trial custody is an exception that must be necessary and proportionate, and is never a punishment in advance.",
+   "legit_form": "Custody the court has justified by a concrete risk.",
+   "how_to_respond_fairly": "Ask which concrete risk the court gave.",
+   "refs_free": [
+    {
+     "name": "Jurists' statement: The ten points of a rule-of-law criminal justice system (full text, index.hu)",
+     "url": "https://index.hu/belfold/2026/10/29/jogallamisag-nyilatkozat-miniszter-ugyved-alkotmenybiro/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "l04",
+   "explain": "Custody rests on a concrete, individual risk that the national code names, with the court's own reasons; facts that lower the risk are weighed too. General statements about the case do not meet this.",
+   "legit_form": "A court decision that names specific risks with reasons.",
+   "how_to_respond_fairly": "Ask for the decision and its reasoning.",
+   "refs_free": [
+    {
+     "name": "Jurists' statement: The ten points of a rule-of-law criminal justice system (full text, index.hu)",
+     "url": "https://index.hu/belfold/2026/10/29/jogallamisag-nyilatkozat-miniszter-ugyved-alkotmenybiro/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "l05",
+   "explain": "Custody and its conditions are not used to obtain a confession or cooperation. It matters because it turns a safeguard into pressure.",
+   "legit_form": "Lawful cooperation offered by the suspect with advice of counsel.",
+   "how_to_respond_fairly": "Ask for the record of the reasons and the conditions.",
+   "refs_free": [
+    {
+     "name": "Jurists' statement: The ten points of a rule-of-law criminal justice system (full text, index.hu)",
+     "url": "https://index.hu/belfold/2026/10/29/jogallamisag-nyilatkozat-miniszter-ugyved-alkotmenybiro/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "l06",
+   "explain": "An independent court reviews every deprivation of liberty promptly and on its individual merits.",
+   "legit_form": "A review that is quick and on the file, followed by a fuller one.",
+   "how_to_respond_fairly": "Ask when the court reviewed it and on what grounds.",
+   "refs_free": [
+    {
+     "name": "Jurists' statement: The ten points of a rule-of-law criminal justice system (full text, index.hu)",
+     "url": "https://index.hu/belfold/2026/10/29/jogallamisag-nyilatkozat-miniszter-ugyved-alkotmenybiro/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "l07",
+   "explain": "Physical restraints are used only where an individual risk requires them. Routine restraint, or restraint for show, goes beyond this.",
+   "legit_form": "Restraints where a documented individual risk exists.",
+   "how_to_respond_fairly": "Ask what individual risk justified the restraint.",
+   "refs_free": [
+    {
+     "name": "Jurists' statement: The ten points of a rule-of-law criminal justice system (full text, index.hu)",
+     "url": "https://index.hu/belfold/2026/10/29/jogallamisag-nyilatkozat-miniszter-ugyved-alkotmenybiro/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "l08",
+   "explain": "Coercive measures are carried out without humiliation or public display. It matters because dignity does not depend on guilt.",
+   "legit_form": "A necessary arrest carried out discreetly.",
+   "how_to_respond_fairly": "Ask whether the display served any purpose in the proceeding.",
+   "refs_free": [
+    {
+     "name": "Jurists' statement: The ten points of a rule-of-law criminal justice system (full text, index.hu)",
+     "url": "https://index.hu/belfold/2026/10/29/jogallamisag-nyilatkozat-miniszter-ugyved-alkotmenybiro/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "l09",
+   "explain": "Communication between lawyer and client is protected from surveillance, since the right of defence depends on it.",
+   "legit_form": "Surveillance of a person who is not acting as a lawyer, as the law sets out.",
+   "how_to_respond_fairly": "Ask whether the lawyer-client channel was kept free from monitoring.",
+   "refs_free": [
+    {
+     "name": "Jurists' statement: The ten points of a rule-of-law criminal justice system (full text, index.hu)",
+     "url": "https://index.hu/belfold/2026/10/29/jogallamisag-nyilatkozat-miniszter-ugyved-alkotmenybiro/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "l10",
+   "explain": "The proceeding establishes the facts of the alleged offence; it is not a tool for a political or other outside goal. A text that says the case is pretextual, or celebrates it as such, is making a claim about purpose that needs evidence.",
+   "legit_form": "A proceeding that has a political person as its subject but a legal ground.",
+   "how_to_respond_fairly": "Ask for the court's reasoning and look at the file, not at who the person is.",
+   "refs_free": [
+    {
+     "name": "Jurists' statement: The ten points of a rule-of-law criminal justice system (full text, index.hu)",
+     "url": "https://index.hu/belfold/2026/10/29/jogallamisag-nyilatkozat-miniszter-ugyved-alkotmenybiro/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "l11",
+   "explain": "The suspect gets timely information on the suspicion, a lawyer and access to the file, and a case with a person in custody has priority.",
+   "legit_form": "A short delay for a defined reason set by law.",
+   "how_to_respond_fairly": "Ask what the suspect was told, when, and whether counsel was present.",
+   "refs_free": [
+    {
+     "name": "Jurists' statement: The ten points of a rule-of-law criminal justice system (full text, index.hu)",
+     "url": "https://index.hu/belfold/2026/10/29/jogallamisag-nyilatkozat-miniszter-ugyved-alkotmenybiro/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "l12",
+   "explain": "The same measure applies to suspects of every political side, and victims' rights are part of the picture too. Praise or outrage depending on the side shows the break.",
+   "legit_form": "Different measures based on different facts, each given with its reason.",
+   "how_to_respond_fairly": "Ask what would have been said if the roles were reversed.",
+   "refs_free": [
+    {
+     "name": "Jurists' statement: The ten points of a rule-of-law criminal justice system (full text, index.hu)",
+     "url": "https://index.hu/belfold/2026/10/29/jogallamisag-nyilatkozat-miniszter-ugyved-alkotmenybiro/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "pe01",
+   "explain": "Accuracy: facts are checked and stated as sources support them. It matters because readers cannot check for themselves.",
+   "legit_form": "A reported claim marked as the source's, not the outlet's.",
+   "how_to_respond_fairly": "Name the source and the part of the claim not checked.",
+   "refs_free": [
+    {
+     "name": "MÚOSZ Etikai Kódex",
+     "url": "https://muosz.hu/alapdokumentumok/etikai-kodex/",
+     "accessed": "2026-11-01"
+    },
+    {
+     "name": "Cod Deontologic Unic (Convenția Organizațiilor de Media)",
+     "url": "https://media.hotnews.ro/media_server1/document-2009-10-25-6353156-0-codul-deontologic-unic.pdf",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "pe02",
+   "explain": "Fact and opinion are kept apart. It matters because a reader needs to know what is reported and what is argued.",
+   "legit_form": "A column or editorial clearly marked as comment.",
+   "how_to_respond_fairly": "Label the comment as comment and keep the reporting separate.",
+   "refs_free": [
+    {
+     "name": "MÚOSZ Etikai Kódex",
+     "url": "https://muosz.hu/alapdokumentumok/etikai-kodex/",
+     "accessed": "2026-11-01"
+    },
+    {
+     "name": "Cod Deontologic Unic (Convenția Organizațiilor de Media)",
+     "url": "https://media.hotnews.ro/media_server1/document-2009-10-25-6353156-0-codul-deontologic-unic.pdf",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "pe03",
+   "explain": "Errors are corrected openly and promptly. It matters because a wrong item keeps circulating otherwise.",
+   "legit_form": "A later update that states what changed.",
+   "how_to_respond_fairly": "Ask for a visible correction that says what was wrong.",
+   "refs_free": [
+    {
+     "name": "MÚOSZ Etikai Kódex",
+     "url": "https://muosz.hu/alapdokumentumok/etikai-kodex/",
+     "accessed": "2026-11-01"
+    },
+    {
+     "name": "Cod Deontologic Unic (Convenția Organizațiilor de Media)",
+     "url": "https://media.hotnews.ro/media_server1/document-2009-10-25-6353156-0-codul-deontologic-unic.pdf",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "pe04",
+   "explain": "A person named in an accusing report has a chance to reply, in the same place and with similar prominence.",
+   "legit_form": "A reply that was sought and declined, and said so.",
+   "how_to_respond_fairly": "Ask for the reply, in the same prominence.",
+   "refs_free": [
+    {
+     "name": "MÚOSZ Etikai Kódex",
+     "url": "https://muosz.hu/alapdokumentumok/etikai-kodex/",
+     "accessed": "2026-11-01"
+    },
+    {
+     "name": "Cod Deontologic Unic (Convenția Organizațiilor de Media)",
+     "url": "https://media.hotnews.ro/media_server1/document-2009-10-25-6353156-0-codul-deontologic-unic.pdf",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "pe05",
+   "explain": "The other side is heard: a report on a dispute puts the affected party's view in the text.",
+   "legit_form": "A short note that the party could not be reached.",
+   "how_to_respond_fairly": "State that the other side was asked, and give its view.",
+   "refs_free": [
+    {
+     "name": "MÚOSZ Etikai Kódex",
+     "url": "https://muosz.hu/alapdokumentumok/etikai-kodex/",
+     "accessed": "2026-11-01"
+    },
+    {
+     "name": "Cod Deontologic Unic (Convenția Organizațiilor de Media)",
+     "url": "https://media.hotnews.ro/media_server1/document-2009-10-25-6353156-0-codul-deontologic-unic.pdf",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "pe06",
+   "explain": "In reporting, the presumption of innocence is kept in the wording: a suspect is a suspect until judgment. The rule binds the authority first; the press owes accuracy and fairness.",
+   "legit_form": "Reporting a charge or a trial in neutral terms.",
+   "how_to_respond_fairly": "Use 'suspected' or 'charged' and report the status accurately.",
+   "refs_free": [
+    {
+     "name": "MÚOSZ Etikai Kódex",
+     "url": "https://muosz.hu/alapdokumentumok/etikai-kodex/",
+     "accessed": "2026-11-01"
+    },
+    {
+     "name": "Cod Deontologic Unic (Convenția Organizațiilor de Media)",
+     "url": "https://media.hotnews.ro/media_server1/document-2009-10-25-6353156-0-codul-deontologic-unic.pdf",
+     "accessed": "2026-11-01"
+    },
+    {
+     "name": "Smtv. (2010. évi CIV. törvény a sajtószabadságról)",
+     "url": "https://net.jogtar.hu/jogszabaly?docid=a1000104.tv",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "pe07",
+   "explain": "Private persons keep their privacy unless there is a clear public interest in a detail.",
+   "legit_form": "Reporting on a person's public role or on a matter of public interest.",
+   "how_to_respond_fairly": "Check whether each private detail serves the public interest.",
+   "refs_free": [
+    {
+     "name": "MÚOSZ Etikai Kódex",
+     "url": "https://muosz.hu/alapdokumentumok/etikai-kodex/",
+     "accessed": "2026-11-01"
+    },
+    {
+     "name": "Cod Deontologic Unic (Convenția Organizațiilor de Media)",
+     "url": "https://media.hotnews.ro/media_server1/document-2009-10-25-6353156-0-codul-deontologic-unic.pdf",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "pe08",
+   "explain": "Minors are not exposed: identity and detail that could identify a child are left out unless the law and their interest allow.",
+   "legit_form": "Reporting a matter involving a child with identity protected.",
+   "how_to_respond_fairly": "Remove identifying detail and say why.",
+   "refs_free": [
+    {
+     "name": "MÚOSZ Etikai Kódex",
+     "url": "https://muosz.hu/alapdokumentumok/etikai-kodex/",
+     "accessed": "2026-11-01"
+    },
+    {
+     "name": "Cod Deontologic Unic (Convenția Organizațiilor de Media)",
+     "url": "https://media.hotnews.ro/media_server1/document-2009-10-25-6353156-0-codul-deontologic-unic.pdf",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "pe09",
+   "explain": "Victims are treated with care: no sensational detail or identification beyond what they accept or the public interest requires.",
+   "legit_form": "Reporting a crime with the victim's identity protected.",
+   "how_to_respond_fairly": "Leave out identifying and sensational detail.",
+   "refs_free": [
+    {
+     "name": "MÚOSZ Etikai Kódex",
+     "url": "https://muosz.hu/alapdokumentumok/etikai-kodex/",
+     "accessed": "2026-11-01"
+    },
+    {
+     "name": "Cod Deontologic Unic (Convenția Organizațiilor de Media)",
+     "url": "https://media.hotnews.ro/media_server1/document-2009-10-25-6353156-0-codul-deontologic-unic.pdf",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "pe10",
+   "explain": "A text does not stir hostility against a group or reduce persons to a group label. It matters because dignity does not depend on group.",
+   "legit_form": "Reporting a group's own statements with context.",
+   "how_to_respond_fairly": "Describe the person or act, not the group.",
+   "refs_free": [
+    {
+     "name": "MÚOSZ Etikai Kódex",
+     "url": "https://muosz.hu/alapdokumentumok/etikai-kodex/",
+     "accessed": "2026-11-01"
+    },
+    {
+     "name": "Cod Deontologic Unic (Convenția Organizațiilor de Media)",
+     "url": "https://media.hotnews.ro/media_server1/document-2009-10-25-6353156-0-codul-deontologic-unic.pdf",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "pe11",
+   "explain": "Sources are named, or their anonymity is explained. It matters because a reader weighs a claim by who makes it.",
+   "legit_form": "An anonymous source with a stated reason and prior checking.",
+   "how_to_respond_fairly": "Name the source or say why it is not named.",
+   "refs_free": [
+    {
+     "name": "MÚOSZ Etikai Kódex",
+     "url": "https://muosz.hu/alapdokumentumok/etikai-kodex/",
+     "accessed": "2026-11-01"
+    },
+    {
+     "name": "Cod Deontologic Unic (Convenția Organizațiilor de Media)",
+     "url": "https://media.hotnews.ro/media_server1/document-2009-10-25-6353156-0-codul-deontologic-unic.pdf",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "pe12",
+   "explain": "Advertising or paid content is kept separate from editorial and labelled. It matters because readers treat the two differently.",
+   "legit_form": "Clearly labelled sponsored content.",
+   "how_to_respond_fairly": "Label the paid content clearly.",
+   "refs_free": [
+    {
+     "name": "MÚOSZ Etikai Kódex",
+     "url": "https://muosz.hu/alapdokumentumok/etikai-kodex/",
+     "accessed": "2026-11-01"
+    },
+    {
+     "name": "Cod Deontologic Unic (Convenția Organizațiilor de Media)",
+     "url": "https://media.hotnews.ro/media_server1/document-2009-10-25-6353156-0-codul-deontologic-unic.pdf",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "pe13",
+   "explain": "A headline matches the text beneath it. It matters because many read only the headline.",
+   "legit_form": "A short headline that is accurate even if incomplete.",
+   "how_to_respond_fairly": "Rewrite the headline so it says what the text supports.",
+   "refs_free": [
+    {
+     "name": "MÚOSZ Etikai Kódex",
+     "url": "https://muosz.hu/alapdokumentumok/etikai-kodex/",
+     "accessed": "2026-11-01"
+    },
+    {
+     "name": "Cod Deontologic Unic (Convenția Organizațiilor de Media)",
+     "url": "https://media.hotnews.ro/media_server1/document-2009-10-25-6353156-0-codul-deontologic-unic.pdf",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "pe14",
+   "explain": "Attribution is exact: who said what, where and when. It matters because misattribution changes the meaning.",
+   "legit_form": "A paraphrase marked as such, with the source.",
+   "how_to_respond_fairly": "Quote the speaker and source.",
+   "refs_free": [
+    {
+     "name": "MÚOSZ Etikai Kódex",
+     "url": "https://muosz.hu/alapdokumentumok/etikai-kodex/",
+     "accessed": "2026-11-01"
+    },
+    {
+     "name": "Cod Deontologic Unic (Convenția Organizațiilor de Media)",
+     "url": "https://media.hotnews.ro/media_server1/document-2009-10-25-6353156-0-codul-deontologic-unic.pdf",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "pe15",
+   "explain": "Quotes are accurate and kept in context. It matters because a clipped quote can reverse what was said.",
+   "legit_form": "A short excerpt that keeps its meaning.",
+   "how_to_respond_fairly": "Give the full passage or link the original.",
+   "refs_free": [
+    {
+     "name": "MÚOSZ Etikai Kódex",
+     "url": "https://muosz.hu/alapdokumentumok/etikai-kodex/",
+     "accessed": "2026-11-01"
+    },
+    {
+     "name": "Cod Deontologic Unic (Convenția Organizațiilor de Media)",
+     "url": "https://media.hotnews.ro/media_server1/document-2009-10-25-6353156-0-codul-deontologic-unic.pdf",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "pe16",
+   "explain": "Sensational detail is not used for its own sake. It matters because it draws attention away from facts and can harm those named.",
+   "legit_form": "A detail needed to understand the facts.",
+   "how_to_respond_fairly": "Remove detail that adds no information.",
+   "refs_free": [
+    {
+     "name": "MÚOSZ Etikai Kódex",
+     "url": "https://muosz.hu/alapdokumentumok/etikai-kodex/",
+     "accessed": "2026-11-01"
+    },
+    {
+     "name": "Cod Deontologic Unic (Convenția Organizațiilor de Media)",
+     "url": "https://media.hotnews.ro/media_server1/document-2009-10-25-6353156-0-codul-deontologic-unic.pdf",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "law",
+   "explain": "The law lens checks what a text says a law requires, permits or forbids. It names the country's statute and gives a section only after the law's text was read. A court decides what the law means.",
+   "legit_form": "A general description of an area of law without a claim about a case.",
+   "how_to_respond_fairly": "Ask for the statute by name, then read the section in the law's own text.",
+   "refs_free": [
+    {
+     "name": "the national constitution and statutes of the country concerned",
+     "url": null
+    },
+    {
+     "name": "EUR-Lex: EU law portal",
+     "url": "https://eur-lex.europa.eu/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  }
+ ],
+ "techniques": [
+  {
+   "id": "m23",
+   "name": "Rights-term misuse",
+   "name_hu": "Jogi fogalom félreértelmezése",
+   "definition": "A right or legal principle is stretched past its meaning, inverted, or applied to one side only, and a conclusion rests on that reading; the harm excused or the right denied must be one the law, or the entry's limits, names. The finding is about how the term is used in the text, not about the author.",
+   "detectors": [
+    "The text names a right or principle and states a holder, a duty-bearer or a limit that differs from the glossary entry (for example a rule that binds the state is said to bind the press)",
+    "A conclusion about what someone may or may not do rests on that reading",
+    "A right is invoked to excuse a harm the law or the entry's limits names, or protection is invoked to deny someone a lawful right (both directions count)",
+    "The same right is invoked for one side and denied to the other in like circumstances"
+   ],
+   "not_this": "A genuine conflict between two rights, argued with both named; a strongly argued position that uses the term in its established sense; a quoted opponent's use of the term.",
+   "routing": {
+    "attributed_motive": "the text says why someone invokes the right (motive, no contradiction of the term)",
+    "generalization": "the misreading is pinned on a whole group",
+    "character_assassination": "the person's credibility, not the term, is attacked",
+    "one_sided_balancing": "only one of two paired rights is named and nothing contradicts the term: report as unclear, not misuse"
+   },
+   "refs_free": [
+    {
+     "name": "EU Charter of Fundamental Rights",
+     "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012P/TXT",
+     "accessed": "2026-11-01"
+    }
+   ]
+  },
+  {
+   "id": "m24",
+   "name": "Delegitimizing an opinion",
+   "name_hu": "Vélemény delegitimálása",
+   "definition": "A view, or its holder (a member of parliament, a parent, a journalist), is presented as not entitled to be voiced (illegitimate, evil, to be silenced), and the text cites no court or authority finding for that. The finding is about the wording, not about anyone's purpose.",
+   "detectors": [
+    "The text says a view must not be said, or that its holder has no right to say it, without arguing against the view",
+    "The view itself, rather than a named unlawful act, is called evil, dangerous or illegitimate, with no court or authority finding cited",
+    "A group is told to be silent because of what it believes (applies equally to every political side and to any group)",
+    "A person's standing to speak (office, role, parenthood) is denied because of the opinion"
+   ],
+   "not_this": "Moral condemnation that leaves the right to speak intact; a lawful limit a court has found; calls for political accountability; satire; criticism of an official's use of office; arguing that a view is wrong with reasons; a rule of procedure that really limits who may speak at a given moment.",
+   "routing": {
+    "attributed_motive": "the text claims to know why someone holds the view (m15)",
+    "generalization": "all holders of the view are said to share it or the fault (m16)",
+    "character_assassination": "the person's credibility, not the standing of the view, is attacked (m04)"
+   },
+   "refs_free": [
+    {
+     "name": "Internet Encyclopedia of Philosophy: Fallacies",
+     "url": "https://iep.utm.edu/fallacy/",
+     "accessed": "2026-11-01"
+    }
+   ]
+  }
+ ]
+}
