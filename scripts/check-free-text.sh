@@ -16,12 +16,14 @@ cd "$ROOT"
 #   instrument citation
 # - tests/case-03 (both), case-07: expectations that say no instrument is cited
 #   (they name the instruments only to forbid them)
+# - tests/case-13 expected ledger: forbids article numbers by naming sample ones
 EXEMPT='scripts/check-free-text.sh
 skills/switch/references/common-terms.tsv
 skills/switch/tests/case-02-child-protection-law.md
 skills/switch/tests/case-03-arrest-comments-hu.md
 skills/switch/tests/case-03-arrest-comments.md
-skills/switch/tests/case-07-free-criminal-text.md'
+skills/switch/tests/case-07-free-criminal-text.md
+skills/switch/tests/case-13-rights-misuse-yes.expected-ledger.json'
 PATTERNS='ECHR|ECtHR|ICCPR|UDHR|UNCRC|European Convention|European Court of Human Rights|Universal Declaration|Council of Europe|United Nations|Venice Commission|OSCE|Framework Convention|\bUN (covenant|convention|treaty)|\bArts?\.? ?[0-9]|\bArticles? ?[0-9]|\bPara(graph)?s?\.? ?[0-9]|Protocol No\.? ?[0-9]|§ ?[0-9]|[0-9] ?§|[0-9]+\. ?cikk|\([0-9]+\) ?bekezdés'
 if [ -n "${DENYLIST:-}" ] && [ -f "$DENYLIST" ]; then
   EXTRA=$(grep -v '^[[:space:]]*#' "$DENYLIST" | grep -v '^[[:space:]]*$' | paste -sd'|' - || true)

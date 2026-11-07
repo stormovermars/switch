@@ -1,0 +1,30 @@
+{
+  "case": "case-13",
+  "lenses": {
+    "etiquette": "on",
+    "manipulation": "on"
+  },
+  "rows_present": [
+    "p*",
+    "m23"
+  ],
+  "rows_finding": {
+    "m23": "found"
+  },
+  "etiquette_always_on": true,
+  "forbidden_terms_file": "denylist",
+  "forbidden_terms": [
+    "Article 24",
+    "Article 14",
+    "Article 7",
+    "Art. 24",
+    "Art. 14",
+    "Art. 7",
+    "\u00a7"
+  ],
+  "judge_items": [
+    "After the author's 'yes' the reply explains m23: what it is, how to recognise it, the legitimate form it is confused with, and how to answer it or write it fairly, with the entry's named source and a public link.",
+    "The offer line 'Explain any of these with references: <names>?' appears exactly once in the whole run and is not repeated after the 'yes'.",
+    "m23 is described as a property of the wording, never as the author's intent."
+  ]
+}
