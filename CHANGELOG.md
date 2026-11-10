@@ -4,6 +4,7 @@ The GitHub repository holds one squashed commit; the history of changes is kept 
 
 ## Unreleased
 
+- README "Install and use": one table per tool with install and first use; `switch-skill.zip` (`scripts/build-skill-zip.sh`, a release asset) for Claude, ChatGPT and Gemini; copy commands for GitHub Copilot (macOS/Linux and PowerShell); update steps for Claude Code. Only Claude Code tested.
 - Rights switch ("rights"): on when the text argues from a right or legal principle, offered when one is named in passing, off otherwise; author-switchable. Reads the new `skills/switch/references/references.json` on demand: glossary r01–r24 (own wording; named sources are the EU Charter of Fundamental Rights, the values in the EU Treaty and the national constitution, with public links, no article numbers), plus the explanation, legitimate form, fair response and references for every finding name.
 - Manipulation checklist: m23 Rights-term misuse and m24 Delegitimizing an opinion (our extension), both directions, with not-this lists, defer rules and no intent wording. One finding per passage: rule-of-law point, then press ethics, then glossary note, then m23.
 - Report pattern: the offer of references waits for the author and is never answered by us; in unattended mode it stays open.

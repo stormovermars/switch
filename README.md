@@ -10,18 +10,68 @@ Command: `/switch` followed by the text.
 - **Term map:** the words each camp uses, backed by a pinned copy of the common-terms index (29 very common political terms, each with both sides).
 - **Disclosure lines:** every report ends with a self-check line and an "Author's choices" line; a rewrite also lists what changed and why.
 
-## Install
+## Install and use
 
-**Claude Code** (marketplace):
+| You use | Install | Then |
+|---|---|---|
+| Claude (claude.ai, desktop, mobile) | Upload [`switch-skill.zip`](https://github.com/stormovermars/switch/releases/latest/download/switch-skill.zip) under Settings → Capabilities → Skills | Paste a text and say "check this with switch" |
+| Claude Code | `/plugin marketplace add stormovermars/switch`, then `/plugin install switch@switch` | `/switch` followed by the text |
+| ChatGPT | Upload [`switch-skill.zip`](https://github.com/stormovermars/switch/releases/latest/download/switch-skill.zip) under Skills | "Check this with switch: …" |
+| Gemini | Upload [`switch-skill.zip`](https://github.com/stormovermars/switch/releases/latest/download/switch-skill.zip) under Settings → Skills | "Check this with switch: …" |
+| GitHub Copilot (VS Code, CLI) | Copy the skill folder (command below) | In agent mode: "Check this with switch: …" |
+| Codex, Cursor | Add this repository in the tool's plugin settings | `/switch` or "check this with switch" |
+
+### Claude (claude.ai web, desktop and mobile apps)
+
+1. Download [`switch-skill.zip`](https://github.com/stormovermars/switch/releases/latest/download/switch-skill.zip). Don't unzip it.
+2. In Claude, open **Settings → Capabilities** and turn on **Code execution and file creation**.
+3. Under **Skills**, choose **Upload skill**, pick the zip, and make sure the **switch** toggle is on.
+
+On Team and Enterprise plans an owner can add it once for the whole organization in the organization settings.
+
+### Claude Code
 
 ```
 /plugin marketplace add stormovermars/switch
 /plugin install switch@switch
 ```
 
-**Other tools:** the repository includes plugin manifests for Codex (`.codex-plugin/`) and Cursor (`.cursor-plugin/`), and an `AGENTS.md` with the full instructions for tools that read it. Add the repository through each tool's plugin settings. Only the Claude Code steps above were tested.
+To update later: `/plugin marketplace update switch`, then `/plugin update switch@switch`.
 
-**Manual:** copy the `skills/switch/` folder (SKILL.md with its `references/` and `ledger.html`) into your tool's skills folder.
+### ChatGPT and Gemini
+
+Both read skills in the same format, so the same zip works.
+
+- **ChatGPT:** open **Skills**, choose to add or upload a skill, and pick [`switch-skill.zip`](https://github.com/stormovermars/switch/releases/latest/download/switch-skill.zip). Skills depend on your plan.
+- **Gemini:** **Settings → Skills → Upload**, then pick the zip. Skills don't run in Canvas or Deep Research yet; use a normal chat.
+
+### GitHub Copilot (VS Code agent mode, Copilot CLI)
+
+macOS or Linux:
+
+```bash
+rm -rf /tmp/switch-src && git clone --depth 1 https://github.com/stormovermars/switch /tmp/switch-src && mkdir -p ~/.copilot/skills && cp -R /tmp/switch-src/skills/switch ~/.copilot/skills/
+```
+
+Windows (PowerShell):
+
+```powershell
+Remove-Item -Recurse -Force $env:TEMP\switch-src -ErrorAction SilentlyContinue; git clone --depth 1 https://github.com/stormovermars/switch $env:TEMP\switch-src; New-Item -ItemType Directory -Force $HOME\.copilot\skills | Out-Null; Copy-Item -Recurse $env:TEMP\switch-src\skills\switch $HOME\.copilot\skills\
+```
+
+Run the same command again to update. For one project only, copy the folder into that repository's `.github/skills/` instead. Microsoft 365 Copilot chat does not load skills.
+
+### Codex, Cursor and other tools
+
+The repository includes plugin manifests for Codex (`.codex-plugin/`) and Cursor (`.cursor-plugin/`), and an `AGENTS.md` with the full instructions for tools that read it. For any other tool that reads skills, copy the `skills/switch/` folder into its skills folder.
+
+### Using it
+
+Give it the text and say what you want: a review ("check this with switch"), a rewrite ("rewrite it with switch"), or a version for the other camp ("rewrite it for the other side with switch"). It asks what your key claims rest on, then reports; answer its questions or say "go on" to get the rest. It replies in the language of your text.
+
+The claim ledger opens as a separate page only where the tool can publish a page with storage (Claude with artifacts); elsewhere it is part of the reply.
+
+Tested: Claude Code. The other tools follow their published skill support and have not been tested yet.
 
 ## Layout
 
