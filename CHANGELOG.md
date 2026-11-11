@@ -2,7 +2,9 @@
 
 The GitHub repository holds one squashed commit; the history of changes is kept here.
 
-## Unreleased
+## 1.11.0 – 2026-11-12 – rights switch, consistent grading, install for chat apps
+
+- Grading rules for consistent findings: the rule-of-law lens is on only when a particular proceeding's treatment of its suspect is discussed, offered for a passing or side mention, off for an accusation with no proceeding; principle rows need a passage that itself breaks the principle, each rated on its own (omissions only under 11; 1–4, 6, 8 only toward a debate partner or differing view; 10 only for content passed on from others); l-rows are rated each on its own, a neutral report is not_addressed, manner points (restraints, display) need approval of that manner, l12 judges the text alone; names and sides never change a finding.
 
 - README "Install and use": one table per tool with install and first use; `switch-skill.zip` (`scripts/build-skill-zip.sh`, a release asset) for Claude, ChatGPT and Gemini; copy commands for GitHub Copilot (macOS/Linux and PowerShell); update steps for Claude Code. Only Claude Code tested.
 - Rights switch ("rights"): on when the text argues from a right or legal principle, offered when one is named in passing, off otherwise; author-switchable. Reads the new `skills/switch/references/references.json` on demand: glossary r01–r24 (own wording; named sources are the EU Charter of Fundamental Rights, the values in the EU Treaty and the national constitution, with public links, no article numbers), plus the explanation, legitimate form, fair response and references for every finding name.

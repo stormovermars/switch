@@ -1,7 +1,7 @@
 # Release
 
 ## Versions
-- The version is set in `plugin.json` of `.claude-plugin/`, `.codex-plugin/` and `.cursor-plugin/`, which must match; `.claude-plugin/marketplace.json` carries no version. Current: 1.10.0.
+- The version is set in `plugin.json` of `.claude-plugin/`, `.codex-plugin/` and `.cursor-plugin/`, which must match; `.claude-plugin/marketplace.json` carries no version. Current: 1.11.0.
 - Each release on GitHub carries `switch-skill.zip` (built by `scripts/build-skill-zip.sh`) as an asset under that exact name; the README's chat-app install link points to `releases/latest/download/switch-skill.zip`.
 - `CHANGELOG.md` records every release. Old entries are not reworded; the public history is kept honest.
 - A change to `SKILL.md` goes into `AGENTS.md` in the same words.
